@@ -1,0 +1,97 @@
+.reveal .slides section > ol {
+    /*
+      reveal.js's own base stylesheet sets top-level ol/ul to
+      display: inline-block, which shrink-wraps the list to its
+      content's natural width, then centers that narrow block via
+      .reveal's text-align: center. That's the actual cause of
+      slides with shorter content looking like they have huge
+      margins -- it isn't margin/padding at all, it's the list
+      never spanning full width to begin with. This restores
+      ordinary block behavior (full width) and centers the block
+      itself at 90% width, giving a ~5% margin on each side.
+    */
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.reveal .backgrounds::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.reveal {
+    font-size: 21px;
+}
+
+.reveal .two-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    row-gap: 20px;
+    width: 100%;
+}
+
+.reveal .three-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;   /* equal widths; try 2fr 1fr for uneven */
+  gap: 2em;
+  align-items: start;               /* lists line up at the top */
+}
+.two-col > div + div {
+  border-left: 2px solid rgba(128, 128, 128, 0.5);  /* divider; works on light and dark themes */
+  padding-left: 2em;
+}
+
+.reveal blockquote.quote {
+  width: 75%;
+  padding: 0.5em 1em;
+  background: none;
+  box-shadow: none;
+  text-align: left;
+  border-left: 6px solid var(--r-link-color);
+}
+
+
+.reveal blockquote.quote footer {
+  margin-top: 0.6em;
+  font-size: 0.7em;
+  font-style: normal;
+  text-align: right;
+}
+.reveal blockquote.quote footer::before {
+  content: "— ";
+}
+
+.reveal .pale {
+    color: #621e1e;
+}
+
+.reveal ol.dec {
+    list-style-type: decimal !important;
+}
+
+.reveal ol.la {
+    list-style-type: lower-alpha !important;
+}
+
+.reveal ol.ua {
+    list-style-type: upper-alpha !important;
+}
+
+.reveal ol.lr {
+    list-style-type: lower-roman !important;
+}
+
+.reveal ol.ur {
+    list-style-type: upper-roman !important;
+}
