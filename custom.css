@@ -1,15 +1,4 @@
 .reveal .slides section > ol {
-    /*
-      reveal.js's own base stylesheet sets top-level ol/ul to
-      display: inline-block, which shrink-wraps the list to its
-      content's natural width, then centers that narrow block via
-      .reveal's text-align: center. That's the actual cause of
-      slides with shorter content looking like they have huge
-      margins -- it isn't margin/padding at all, it's the list
-      never spanning full width to begin with. This restores
-      ordinary block behavior (full width) and centers the block
-      itself at 90% width, giving a ~5% margin on each side.
-    */
     display: block;
     width: 90%;
     margin: 0 auto;
@@ -61,6 +50,9 @@
   border-left: 6px solid var(--r-link-color);
 }
 
+.reveal-viewport {
+  background: url("uva-background2.jpg") center / cover no-repeat;
+}
 
 .reveal blockquote.quote footer {
   margin-top: 0.6em;
