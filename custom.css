@@ -1,89 +1,139 @@
 .reveal .slides section > ol {
-    display: block;
-    width: 90%;
-    margin: 0 auto;
+	display: block;
+	width: 90%;
+	margin: 0 auto;
 }
 
 .reveal .backgrounds::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(255, 255, 255, 0.9);
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: rgba(255, 255, 255, 0.9);
 }
 
 .reveal {
-    font-size: 21px;
+	font-size: 21px;
 }
 
 .reveal .two-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    row-gap: 20px;
-    width: 100%;
+	/* Deprecated, use cols instead */
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	row-gap: 20px;
+	width: 100%;
 }
 
 .reveal .three-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    row-gap: 20px;
-    width: 100%;
-    box-sizing: border-box;
+	/* Deprecated, use cols instead */
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	row-gap: 20px;
+	width: 100%;
+	box-sizing: border-box;
 }
 
 .two-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;   /* equal widths; try 2fr 1fr for uneven */
-  gap: 2em;
-  align-items: start;               /* lists line up at the top */
+	/* Deprecated, use cols instead */
+	display: grid;
+	grid-template-columns: 1fr 1fr; /* equal widths; try 2fr 1fr for uneven */
+	gap: 2em;
+	align-items: start; /* lists line up at the top */
 }
 .two-col > div + div {
-  border-left: 2px solid rgba(128, 128, 128, 0.5);  /* divider; works on light and dark themes */
-  padding-left: 2em;
+	/* Deprecated, use cols. >.divider instead */
+	border-left: 2px solid rgba(128, 128, 128, 0.5); /* divider; works on light and dark themes */
+	padding-left: 2em;
+}
+
+.reveal .cols {
+	display: grid;
+	grid-template-columns: var(
+		--cols,
+		1fr 1fr
+	); /* column layout; default: two equal */
+	gap: var(--gap, 2em); /* space between columns and rows */
+	align-items: var(--align, start); /* start, center or end */
+}
+
+/* dividers between all columns */
+.reveal .cols.divided > * + * {
+	border-left: 2px solid rgba(128, 128, 128, 0.5);
+	padding-left: var(--gap, 2em);
+}
+
+/* divider before one specific column */
+.reveal .cols > .divider {
+	border-left: 2px solid rgba(128, 128, 128, 0.5);
+	padding-left: var(--gap, 2em);
 }
 
 .reveal blockquote.quote {
-  width: 75%;
-  padding: 0.5em 1em;
-  background: none;
-  box-shadow: none;
-  text-align: left;
-  border-left: 6px solid var(--r-link-color);
+	width: 75%;
+	padding: 0.5em 1em;
+	background: none;
+	box-shadow: none;
+	text-align: left;
+	border-left: 6px solid var(--r-link-color);
+}
+
+.reveal table.game {
+	border-collapse: collapse;
+	margin: 0.5em auto; /* centred on the slide */
+}
+.reveal table.game th,
+.reveal table.game td {
+	border: none; /* remove reveal's default table lines */
+	padding: 0.3em 0.9em;
+	text-align: center;
+	vertical-align: middle;
+}
+.reveal table.game td {
+	border: 2px solid currentColor; /* grid only around the payoffs */
+	min-width: 3.5em;
+}
+.reveal table.game {
+	--player-w: 2.5em; /* width of the "US" column */
+	--strat-w: 6em; /* width of the "No Bomb"/"Bomb" column */
+	transform: translateX(calc((var(--player-w) + var(--strat-w)) / -3));
+}
+.reveal table.game tr:last-child td {
+	border-bottom: 2px solid currentColor;
 }
 
 .reveal-viewport {
-  background: url("uva-background2.jpg") center / cover no-repeat;
+	background: url("uva-background2.jpg") center / cover no-repeat;
 }
 
 .reveal blockquote.quote footer {
-  margin-top: 0.6em;
-  font-size: 0.7em;
-  font-style: normal;
-  text-align: right;
+	margin-top: 0.6em;
+	font-size: 0.7em;
+	font-style: normal;
+	text-align: right;
 }
 .reveal blockquote.quote footer::before {
-  content: "— ";
+	content: "  ";
 }
 
 .reveal .pale {
-    color: #621e1e;
+	color: #621e1e;
 }
 
 .reveal ol.dec {
-    list-style-type: decimal !important;
+	list-style-type: decimal !important;
 }
 
 .reveal ol.la {
-    list-style-type: lower-alpha !important;
+	list-style-type: lower-alpha !important;
 }
 
 .reveal ol.ua {
-    list-style-type: upper-alpha !important;
+	list-style-type: upper-alpha !important;
 }
 
 .reveal ol.lr {
-    list-style-type: lower-roman !important;
+	list-style-type: lower-roman !important;
 }
 
 .reveal ol.ur {
-    list-style-type: upper-roman !important;
+	list-style-type: upper-roman !important;
 }

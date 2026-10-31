@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>OM Week 2</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="dist/plugin/highlight/monokai.css" />
+
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- JSXGraph: used for the implicit-circle and Taylor approximation slides -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides" style="font-size: 35px">
+        <section>
+          <h2>Game Theory: Strategic Situations</h2>
+          <ul>
+            <li>
+              In markets
+              <ul>
+                <li class="fragment">
+                  Competitive market: every agent takes price as given.
+                  Decisions then independent
+                </li>
+                <li class="fragment">
+                  Monopoly: one agent anticipates decisions of others
+                </li>
+                <li class="fragment">
+                  What if several agents anticipate decisions? What do they
+                  anticipate?
+                </li>
+                <li class="fragment">
+                  $A$ anticipates $B$ and $B$ anticipates $A$ - cyclic
+                </li>
+              </ul>
+            </li>
+            <li class="fragment">In general: Strategic situation:</li>
+            <li class="fragment">
+              <em>Outcome of your action depends on actions of others</em>
+            </li>
+            <li class="fragment">What to expect? What to predict?</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Best Response and Nash Equilibrium</h2>
+          <div class="cols" style="--cols: 2fr 1fr; --align: center">
+            <ul>
+              <li class="fragment">What to predict?</li>
+              <li class="fragment">
+                Two things seem reasonable (?):
+                <ol>
+                  <li class="fragment">
+                    Agents optimise (Standard economics view)
+                  </li>
+                  <li class="fragment">
+                    Agents correctly anticipate other agents (Brilliant new
+                    idea)
+                  </li>
+                </ol>
+              </li>
+              <li class="fragment">Together: Nash Equilibrium</li>
+              <li class="fragment">
+                Agents best respond to correctly anticipated actions of others
+              </li>
+              <li class="fragment">Outcome is stable:</li>
+              <li class="fragment">
+                Given equilibrium, nobody wants to deviate (unilaterally)
+              </li>
+            </ul>
+            <img
+              src="John-Nash.jpg"
+              alt="Image of John Nash, inventor of the eponymous equilibrium concept."
+            />
+          </div>
+        </section>
+        <section>
+          <h2>Normal Form of a Game</h2>
+          <ul>
+            <li class="fragment">
+              Strategic Situation: Outcome of your action depends on actions of
+              others
+            </li>
+            <li class="fragment">
+              We can list all of player 1's actions/options vertically (say)
+            </li>
+            <li class="fragment">
+              Similarly, all of player 2's options horizontally
+            </li>
+            <li class="fragment">Get a table; list pay-offs in the table</li>
+            <li class="fragment">This is called the normal form of the game</li>
+            <li class="fragment">
+              Every strategic situation has a normal form and it is unique
+            </li>
+            <li class="fragment">
+              A normal form does not imply simultaneous actions!
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Dominance and Prisoner's Dilemma</h2>
+          <table class="game">
+            <tr>
+              <th colspan="2"></th>
+              <th colspan="2">USSR</th>
+            </tr>
+            <tr>
+              <th colspan="2"></th>
+              <th>No Bomb</th>
+              <th>Bomb</th>
+            </tr>
+            <tr>
+              <th rowspan="2" class="player">US</th>
+              <th>No Bomb</th>
+              <td>Peace, Peace</td>
+              <td>
+                Peace + No Power,
+                <span class="fragment highlight-green" data-fragment-index="3"
+                  >Peace + Power</span
+                >
+              </td>
+            </tr>
+            <tr>
+              <th>Bomb</th>
+              <td>
+                <span class="fragment highlight-green" data-fragment-index="1"
+                  >Peace + Power</span
+                >, Peace + No Power
+              </td>
+              <td>
+                <span class="fragment highlight-green" data-fragment-index="2"
+                  >Cold War</span
+                >,<br />
+                <span class="fragment highlight-green" data-fragment-index="4"
+                  >Cold War</span
+                >
+              </td>
+            </tr>
+          </table>
+        </section>
+        <section>
+          <h2>Prisoner's Dilemma</h2>
+          <ul>
+            <li class="fragment">
+              Each player has a <em>Dominant Strategy</em>
+              <ul>
+                <li class="fragment">
+                  <em>Bomb</em> is better than <em>No Bomb</em>, no matter the
+                  action of the other player
+                </li>
+              </ul>
+            </li>
+            <li class="fragment">
+              Equilibrium is Pareto inefficient
+              <ul>
+                <li class="fragment">
+                  Both agree <em>(No Bomb, No Bomb)</em> is better than
+                  <em>(Bomb, Bomb)</em>
+                </li>
+              </ul>
+            </li>
+            <li class="fragment">
+              Nash Equilibrium very different beast than general equilibrium!
+            </li>
+            <li class="fragment">Selfish temptations undermine cooperation</li>
+            <li class="fragment">
+              (Behaviouralist sometimes poohpooh observation, but it's
+              fundamental)
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Chess and dominancs (Class question)</h2>
+        </section>
+        <section>
+          <h2>Coordination game and multiplicity</h2>
+        </section>
+        <section>
+          <h2>Mixed strategy game</h2>
+        </section>
+        <section>
+          <h2>Game Theory and Markets</h2>
+        </section>
+        <section>
+          <h2>Hotelling</h2>
+        </section>
+        <section>
+          <h2>Bertrand</h2>
+        </section>
+        <section>
+          <h2>Cournot (including n firms)</h2>
+        </section>
+        <section>
+          <h2>Bertrand with differentiated goods (verbal)</h2>
+        </section>
+        <section>
+          <h2>Diamond paradox</h2>
+        </section>
+        <section>
+          <h2>Game Theory in the Firm</h2>
+        </section>
+        <section>
+          <h2>Team production and free-riding</h2>
+        </section>
+        <section>
+          <h2>Efficient outcome</h2>
+        </section>
+        <section>
+          <h2>Nash of Team</h2>
+        </section>
+        <section>
+          <h2>Solving Free-riding</h2>
+        </section>
+        <section>
+          <h2>Comparative performance Evaluation</h2>
+          Point out that this assumes all the info, the lack of which was the
+          problem
+        </section>
+        <section>
+          <h2>Tournaments</h2>
+        </section>
+        <section>
+          <h2>Downsides of comparative evaluation</h2>
+        </section>
+        <section>
+          <h2></h2>
+        </section>
+        <section>
+          <h2></h2>
+        </section>
+        <section>
+          <h2></h2>
+        </section>
+      </div>
+    </div>
+    <script src="dist/reveal.js"></script>
+    <script src="dist/plugin/math.js"></script>
+    <script src="dist/plugin/notes.js"></script>
+    <script src="mj-notation.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        mathjax4: MJNotation.mathjax4(),
+        plugins: [RevealMath.MathJax4, RevealNotes],
+      });
+    </script>
+  </body>
+</html>
