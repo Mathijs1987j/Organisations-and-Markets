@@ -1,9 +1,13 @@
-.reveal .slides section > ol {
-	display: block;
-	width: 90%;
-	margin: 0 auto;
-}
+/* custom.css: shared styles for the reveal.js course slides. */
 
+/* ==================================================================
+   Page and background
+   ================================================================== */
+
+/* Background photo, with a white veil so text stays readable. */
+.reveal-viewport {
+	background: url("background.jpg") center / cover no-repeat;
+}
 .reveal .backgrounds::after {
 	content: "";
 	position: absolute;
@@ -11,61 +15,59 @@
 	background: rgba(255, 255, 255, 0.9);
 }
 
-.reveal {
-	font-size: 21px;
-}
-
-.reveal .two-grid {
-	/* Deprecated, use cols instead */
-	display: grid;
-	grid-template-columns: 2fr 1fr;
-	row-gap: 20px;
-	width: 100%;
-}
-
-.reveal .three-grid {
-	/* Deprecated, use cols instead */
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	row-gap: 20px;
-	width: 100%;
-	box-sizing: border-box;
-}
-
-.two-col {
-	/* Deprecated, use cols instead */
-	display: grid;
-	grid-template-columns: 1fr 1fr; /* equal widths; try 2fr 1fr for uneven */
-	gap: 2em;
-	align-items: start; /* lists line up at the top */
-}
-.two-col > div + div {
-	/* Deprecated, use cols. >.divider instead */
-	border-left: 2px solid rgba(128, 128, 128, 0.5); /* divider; works on light and dark themes */
-	padding-left: 2em;
-}
+/* ==================================================================
+   Columns: <div class="cols" style="--cols: 2fr 1fr; --align: center">
+   ================================================================== */
 
 .reveal .cols {
 	display: grid;
-	grid-template-columns: var(
-		--cols,
-		1fr 1fr
-	); /* column layout; default: two equal */
-	gap: var(--gap, 2em); /* space between columns and rows */
-	align-items: var(--align, start); /* start, center or end */
+	/* column layout; default: two equal */
+	grid-template-columns: var(--cols, 1fr 1fr);
+	/* space between columns and rows */
+	gap: var(--gap, 2em);
+	/* start, center or end */
+	align-items: var(--align, start);
 }
 
-/* dividers between all columns */
-.reveal .cols.divided > * + * {
-	border-left: 2px solid rgba(128, 128, 128, 0.5);
-	padding-left: var(--gap, 2em);
-}
-
-/* divider before one specific column */
+/* Dividers between all columns (class "divided"),
+   or before one column (class "divider" on that column). */
+.reveal .cols.divided > * + *,
 .reveal .cols > .divider {
 	border-left: 2px solid rgba(128, 128, 128, 0.5);
 	padding-left: var(--gap, 2em);
 }
+
+/* ==================================================================
+   Lists
+   ================================================================== */
+
+/* Top-level numbered lists: a block, centred, not full width. */
+.reveal .slides section > ol {
+	display: block;
+	width: 90%;
+	margin: 0 auto;
+}
+
+/* Numbering style: <ol class="la"> gives a, b, c. */
+.reveal ol.dec {
+	list-style-type: decimal;
+}
+.reveal ol.la {
+	list-style-type: lower-alpha;
+}
+.reveal ol.ua {
+	list-style-type: upper-alpha;
+}
+.reveal ol.lr {
+	list-style-type: lower-roman;
+}
+.reveal ol.ur {
+	list-style-type: upper-roman;
+}
+
+/* ==================================================================
+   Quotes: <blockquote class="quote">   <footer>Author</footer>
+   ================================================================== */
 
 .reveal blockquote.quote {
 	width: 75%;
@@ -75,35 +77,6 @@
 	text-align: left;
 	border-left: 6px solid var(--r-link-color);
 }
-
-.reveal table.game {
-	border-collapse: collapse;
-	margin: 0.5em auto; /* centred on the slide */
-}
-.reveal table.game th,
-.reveal table.game td {
-	border: none; /* remove reveal's default table lines */
-	padding: 0.3em 0.9em;
-	text-align: center;
-	vertical-align: middle;
-}
-.reveal table.game td {
-	border: 2px solid currentColor; /* grid only around the payoffs */
-	min-width: 3.5em;
-}
-.reveal table.game {
-	--player-w: 2.5em; /* width of the "US" column */
-	--strat-w: 6em; /* width of the "No Bomb"/"Bomb" column */
-	transform: translateX(calc((var(--player-w) + var(--strat-w)) / -3));
-}
-.reveal table.game tr:last-child td {
-	border-bottom: 2px solid currentColor;
-}
-
-.reveal-viewport {
-	background: url("uva-background2.jpg") center / cover no-repeat;
-}
-
 .reveal blockquote.quote footer {
 	margin-top: 0.6em;
 	font-size: 0.7em;
@@ -114,26 +87,87 @@
 	content: "  ";
 }
 
+/* ==================================================================
+   Text colours
+   ================================================================== */
+
 .reveal .pale {
 	color: #621e1e;
 }
 
-.reveal ol.dec {
-	list-style-type: decimal !important;
+/* ==================================================================
+   Normal-form game tables: <table class="game"> (snippet "nfg")
+   ================================================================== */
+
+.reveal table.game {
+	/* how far the table moves left, so the payoff grid
+	   (not the labels) is centred; adjust per table */
+	--shift: 2.8em;
+	/* width of each payoff number; widen for long payoffs */
+	--payoff-w: 2em;
+	border-collapse: collapse;
+	margin: 0.5em auto;
+	transform: translateX(calc(-1 * var(--shift)));
 }
 
-.reveal ol.la {
-	list-style-type: lower-alpha !important;
+.reveal table.game th,
+.reveal table.game td {
+	/* remove reveal's default table lines */
+	border: none;
+	padding: 0.3em 0.9em;
+	text-align: center;
+	vertical-align: middle;
 }
 
-.reveal ol.ua {
-	list-style-type: upper-alpha !important;
+/* The grid only around the payoffs. The second selector beats
+   reveal's rule that removes the last row's bottom border. */
+.reveal table.game td,
+.reveal table.game tr:last-child td {
+	border: 2px solid currentColor;
+}
+.reveal table.game td {
+	min-width: 3.5em;
+	white-space: nowrap;
 }
 
-.reveal ol.lr {
-	list-style-type: lower-roman !important;
+/* Payoffs <span>a</span>, <span>b</span>: two boxes of equal width,
+   so the comma sits in the middle of every cell in a column. */
+.reveal table.game td > span:first-child,
+.reveal table.game td > span:last-child {
+	display: inline-block;
+	width: var(--payoff-w);
+}
+.reveal table.game td > span:first-child {
+	text-align: right;
+}
+.reveal table.game td > span:last-child {
+	text-align: left;
 }
 
-.reveal ol.ur {
-	list-style-type: upper-roman !important;
+/* ==================================================================
+   Deprecated: old decks only. New slides use .cols.
+   Delete once no deck uses these classes.
+   ================================================================== */
+
+.reveal .two-grid {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	row-gap: 20px;
+}
+
+.reveal .three-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	row-gap: 20px;
+}
+
+.two-col {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 2em;
+	align-items: start;
+}
+.two-col > div + div {
+	border-left: 2px solid rgba(128, 128, 128, 0.5);
+	padding-left: 2em;
 }
