@@ -4,6 +4,10 @@
    Page and background
    ================================================================== */
 
+.reveal {
+	font-size: 21px;
+}
+
 /* Background photo, with a white veil so text stays readable. */
 .reveal-viewport {
 	background: url("background.jpg") center / cover no-repeat;
@@ -127,20 +131,25 @@
 }
 .reveal table.game td {
 	min-width: 3.5em;
-	white-space: nowrap;
 }
 
 /* Payoffs <span>a</span>, <span>b</span>: two boxes of equal width,
-   so the comma sits in the middle of every cell in a column. */
-.reveal table.game td > span:first-child,
-.reveal table.game td > span:last-child {
+   so the comma sits in the middle of every cell in a column.
+   Only for short payoffs (numbers); a table with words as payoffs
+   gets class "text": <table class="game text">, and its payoffs
+   simply flow and wrap. */
+.reveal table.game:not(.text) td {
+	white-space: nowrap;
+}
+.reveal table.game:not(.text) td > span:first-child,
+.reveal table.game:not(.text) td > span:last-child {
 	display: inline-block;
 	width: var(--payoff-w);
 }
-.reveal table.game td > span:first-child {
+.reveal table.game:not(.text) td > span:first-child {
 	text-align: right;
 }
-.reveal table.game td > span:last-child {
+.reveal table.game:not(.text) td > span:last-child {
 	text-align: left;
 }
 

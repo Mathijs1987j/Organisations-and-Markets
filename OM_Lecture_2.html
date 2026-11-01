@@ -84,7 +84,7 @@
               </li>
             </ul>
             <img
-              src="John-Nash.jpg"
+              src="Nash.jpg"
               alt="Image of John Nash, inventor of the eponymous equilibrium concept."
             />
           </div>
@@ -114,7 +114,7 @@
         </section>
         <section>
           <h2>Dominance and Prisoner's Dilemma</h2>
-          <table class="game">
+          <table class="game text">
             <tr>
               <th colspan="2"></th>
               <th colspan="2">USSR</th>
@@ -127,9 +127,9 @@
             <tr>
               <th rowspan="2" class="player">US</th>
               <th>No Bomb</th>
-              <td>Peace, Peace</td>
+              <td><span>Peace</span>, <span>Peace</span></td>
               <td>
-                Peace + No Power,
+                <span>Peace + No Power</span>,
                 <span class="fragment highlight-green" data-fragment-index="3"
                   >Peace + Power</span
                 >
@@ -140,12 +140,12 @@
               <td>
                 <span class="fragment highlight-green" data-fragment-index="1"
                   >Peace + Power</span
-                >, Peace + No Power
+                >, <span>Peace + No Power</span>
               </td>
               <td>
                 <span class="fragment highlight-green" data-fragment-index="2"
                   >Cold War</span
-                >,<br />
+                >,
                 <span class="fragment highlight-green" data-fragment-index="4"
                   >Cold War</span
                 >
@@ -288,78 +288,424 @@
             <tr>
               <th rowspan="2">Adelbrecht</th>
               <th>Heads</th>
-              <td>1, -1</td>
-              <td>-1, 1</td>
+              <td>
+                <span class="fragment highlight-green" data-fragment-index="1"
+                  >1</span
+                >, <span>-1</span>
+              </td>
+              <td>
+                <span>-1</span>,
+                <span class="fragment highlight-green" data-fragment-index="3"
+                  >1</span
+                >
+              </td>
             </tr>
             <tr>
               <th>Tails</th>
-              <td>-1, 1</td>
-              <td>1, -1</td>
+              <td>
+                <span>-1</span>,
+                <span class="fragment highlight-green" data-fragment-index="4"
+                  >1</span
+                >
+              </td>
+              <td>
+                <span class="fragment highlight-green" data-fragment-index="2"
+                  >1</span
+                >, <span>-1</span>
+              </td>
             </tr>
           </table>
         </section>
         <section>
           <h2>Mixed Strategies</h2>
           <ul>
-            <li class="fragment"></li>
-            <li class="fragment"></li>
-            <li class="fragment"></li>
-            <li class="fragment"></li>
-            <li class="fragment"></li>
+            <li class="fragment">No pair of actions leaves both happy</li>
+            <li class="fragment">No equilbrium in pure strategies</li>
+            <li class="fragment">Mixed strategy: randomise choice</li>
+            <li class="fragment">
+              Nash equilibrium only guaranteed to exist if we allow mixed
+              strategies
+            </li>
+            <li class="fragment">
+              You can check: if each player randomises 50-50, neither wants to
+              deviate
+            </li>
+            <li class="fragment">
+              Technique for finding mixed strategy not in this course
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Hotelling</h2>
+          <svg
+            viewBox="0 0 600 130"
+            width="700"
+            stroke="currentColor"
+            stroke-width="3"
+            fill="none"
+            font-size="22"
+            font-family="inherit"
+          >
+            <g class="fragment" data-fragment-index="1">
+              <path d="M0, 80 H600" />
+              <g class="fragment fade-out" data-fragment-index="4">
+                <path d="M100, 75 V85 M400, 75 V85" />
+                <g fill="currentColor" stroke="none">
+                  <text x="93" y="110" font-size="30px">A</text>
+                  <text x="395" y="110" font-size="30px">B</text>
+                </g>
+              </g>
+            </g>
+            <g class="fragment fade-out" data-fragment-index="4">
+              <g class="fragment" data-fragment-index="2">
+                <polygon
+                  points="0,80 250,80 250,40 0,40"
+                  fill="blue"
+                  fill-opacity="0.3"
+                  stroke="none"
+                />
+                <polygon
+                  points="600,80 250,80 250,40 600,40"
+                  fill="red"
+                  fill-opacity="0.3"
+                  stroke="none"
+                />
+              </g>
+            </g>
+            <g class="fragment fade-in-then-out" data-fragment-index="4">
+              <path d="M395, 75 V85 M400, 75 V85" />
+              <g fill="currentColor" stroke="none">
+                <text x="380" y="110" font-size="30px">A</text>
+                <text x="400" y="110" font-size="30px">B</text>
+                <polygon
+                  points="0,80 397.5,80 397.5,40 0,40"
+                  fill="blue"
+                  fill-opacity="0.3"
+                  stroke="none"
+                />
+                <polygon
+                  points="600,80 397.5,80 397.5,40 600,40"
+                  fill="red"
+                  fill-opacity="0.3"
+                  stroke="none"
+                />
+              </g>
+            </g>
+            <g class="fragment fade-in-then-out" data-fragment-index="5">
+              <path d="M299, 75 V85 M301, 75 V85" />
+              <g fill="currentColor" stroke="none">
+                <text x="285" y="110" font-size="30px">A</text>
+                <text x="302" y="110" font-size="30px">B</text>
+                <polygon
+                  points="0,80 300,80 300,40 0,40"
+                  fill="blue"
+                  fill-opacity="0.3"
+                  stroke="none"
+                />
+                <polygon
+                  points="600,80 300,80 300,40 600,40"
+                  fill="red"
+                  fill-opacity="0.3"
+                  stroke="none"
+                />
+              </g>
+            </g>
+          </svg>
+          <ul>
+            <li class="fragment" data-fragment-index="1">
+              Consumers live across the street, two shops $A$ and $B$ on the
+              street
+            </li>
+            <li class="fragment" data-fragment-index="2">
+              Consumers go to the closest shop
+            </li>
+            <li class="fragment" data-fragment-index="3">
+              Where should the shops locate?
+            </li>
+            <li class="fragment" data-fragment-index="4">
+              If $B$ is not in the middle, $A$ can steal more than half of
+              customers
+            </li>
+            <li class="fragment" data-fragment-index="5">
+              If both are in the middle, neither side can profitably deviate:
+              equilibrium
+            </li>
           </ul>
         </section>
         <section>
           <h2>Game Theory and Markets</h2>
-        </section>
-        <section>
-          <h2>Hotelling</h2>
+          <ul>
+            <li class="fragment">Unique model of price taking markets</li>
+            <li class="fragment">
+              Very many models of non-competitive markets
+            </li>
+            <li class="fragment">Slightly bewildering picture</li>
+            <li class="fragment">We will focus on a few basic models</li>
+          </ul>
         </section>
         <section>
           <h2>Bertrand</h2>
+          <div class="cols" style="--cols: 2fr 1fr; --align: center">
+            <ul>
+              <li class="fragment">
+                Two firms, $A$ and $B$, identical goods, constant marginal cost
+                of production $c$
+              </li>
+              <li class="fragment">Demand is $Q_D=1000-p$</li>
+              <li class="fragment">
+                Firms simultaneously set prices $p_A$ and $p_B$
+              </li>
+              <li class="fragment">Firm with lowest price gets all demand</li>
+              <li class="fragment">
+                Claim: in equilibrium total profit $\Pi$ cannot be greater than
+                0
+                <ul>
+                  <li class="fragment">
+                    If $\Pi>0$, then one of the firms earns no more than $\Pi/2$
+                  </li>
+                  <li class="fragment">
+                    If it instead sets a price just below the other firm,<br />
+                    it earns $\Pi-\epsilon$
+                  </li>
+                  <li class="fragment">
+                    That is a profitable deviation; so no equilibrium
+                  </li>
+                </ul>
+              </li>
+              <li class="fragment">
+                In equilibrium $\Pi=0$. That suggests $p_A=p_B=c$. That is
+                indeed the unique equilibrium.
+              </li>
+            </ul>
+            <img
+              src="Bertrand.jpg"
+              alt="Image of Joseph Betrand, mathematician and originator of the Bertrand model"
+            />
+          </div>
         </section>
         <section>
-          <h2>Cournot (including n firms)</h2>
+          <h2>Betrand Paradox?</h2>
+          <ul>
+            <li class="fragment">
+              Competitive outcome with only 2 firms
+              <ul>
+                <li class="fragment">
+                  $Q=1000-c$ &rArr; efficient; everybody willing to pay $c$ or
+                  more gets good
+                </li>
+              </ul>
+            </li>
+            <li class="fragment">Not price-taking, but same behaviour</li>
+            <li class="fragment">In reality, competition less extreme</li>
+            <li class="fragment">Many different models</li>
+            <li class="fragment">
+              One other: competition in quantities instead of prices
+              <ul>
+                <li class="fragment">Cournot vs Bertrand</li>
+              </ul>
+            </li>
+          </ul>
         </section>
         <section>
-          <h2>Bertrand with differentiated goods (verbal)</h2>
+          <h2>Cournot</h2>
+          <div class="cols" style="--cols: 3fr 1fr; --align: center">
+            <ul>
+              <li class="fragment">
+                Same firms, same demand, but firms compete by setting quantity
+                instead of price. I.e.
+              </li>
+              <li class="fragment">
+                Two firms, $A$ and $B$, identical goods, constant marginal cost
+                of production $c$, say $c=100$
+              </li>
+              <li class="fragment">Demand is $Q_D=1000-p$, or $p=1000-Q_D$</li>
+              <li class="fragment">In equilibrium $Q_D=Q_S=Q_A+Q_B$</li>
+              <li class="fragment">
+                Big difference with Bertrand:
+                <ul>
+                  <li class="fragment">
+                    Bertrand: slight increase in price: demand &xrarr; 0
+                  </li>
+                  <li class="fragment">
+                    Cournot: slight decrease in supply: price &xrarr; slight
+                    increase
+                  </li>
+                </ul>
+              </li>
+              <li class="fragment">
+                Nash equilibrium: $Q_A$ optimal given $Q_B$ and vice versa.
+              </li>
+            </ul>
+            <img
+              src="Cournot.jpg"
+              alt="Antoine Augustin Cournot, originator of the Cournot model"
+            />
+          </div>
         </section>
         <section>
+          <h2>Cournot</h2>
+          <ul>
+            <li class="fragment">
+              If firm $B$ produces $Q_B$, then firm $A$ has residual (inverse)
+              demand $p=(1000-Q_B)-Q_A$
+            </li>
+            <li class="fragment">$\Pi_A=(p-c)Q_A=(1000-100-Q_B-Q_A)Q_A$</li>
+            <li class="fragment">
+              FOC: $900-Q_B-2Q_A=0$, or $Q_A=\dfrac{900-Q_B}2$
+            </li>
+            <li class="fragment">
+              $Q_A=\dfrac{900-Q_B}2$ is $A$'s best response curve
+            </li>
+            <li class="fragment">Similarly for $B$: $Q_B=\dfrac{900-Q_A}2$</li>
+            <li class="fragment">Putting it together: $Q_A=Q_B=300$</li>
+            <li class="fragment">And $p=300>100=c$</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Cournot</h2>
+          <ul>
+            <li class="fragment">Outcome is inefficient: $p>c$, $Q=600<900$
+              <ul> <li class="fragment">Consumer 601 has willingness to pay of $900-601=299>100$. Profitable trade that does not happen! </li>
+            </li></ul>
+            <li class="fragment">"Solves" Bertrand "paradox"</li>
+            <li class="fragment">Not clear that it is more realistic <ul>
+              <li class="fragment">Firms can always change prices (&#x21AF; Cournot)</li>
+              <li class="fragment">But production decision are often made far in advance (&#x21AF; Bertrand)</li>
+            </ul> </li>
+            <li class="fragment">In Cournot, if we have $n$ firms, as $n\rightarrow \infty$, $p\rightarrow c$</li>
+            <li class="fragment">Many models, but most have some inefficiency that vanishes as $n\rightarrow \infty$ <ul>
+              <li class="fragment">Bertrand with differentiated goods</li>
+              <li class="fragment">Bertrand with fixed stock of goods</li>
+              <li class="fragment">Bertrand with switching costs</li>
+            </ul></li>
+          </ul>
+        </section>
+        <section style="font-size: 29px;">
           <h2>Diamond paradox</h2>
+          <div class="cols" style="--cols: 3fr 1fr; --align: center">
+            <ul>
+            <li class="fragment">
+              Same firms, same demand, firms compete by setting prices. I.e.
+            </li>
+            <li class="fragment">
+              Two firms, $A$ and $B$, identical goods, constant marginal cost
+              of production $c$, say $c=100$
+            </li>
+            <li class="fragment">Demand is $Q_D=1000-p$, or $p=1000-Q_D$</li>
+            <li class="fragment">Now consumers only see price when they visit a store and pay small cost $k$ for walking to store</li>
+            <li class="fragment">Claim: in Nash equilibrium $p_A=p_B=p_M=450$</li>
+            <li class="fragment">Half the consumers go to each firm</li>
+            <li class="fragment">Firms set monopoly price, to maximize profit as if they were alone in the market</li>
+            <li class="fragment">Why can't firms deviate to lower price and steal market? <ul>
+              <li class="fragment">Consumers don't see lower price and expect $p_M$ at other firm</li>
+              <li class="fragment">Checking costs $k$ and has no benefits in expectation.</li>
+              <li class="fragment">So lowering price does not attract consumers</li>
+            </ul></li>
+            <li class="fragment">Strong assumption: info about prices only through consumer search. Relax that, back to typical conclusions</li>
+            </ul>
+            <img src="Diamond.jpg" alt="Peter Diamond, economist who discovered the Diamond paradox"/>
+          </div>
         </section>
         <section>
           <h2>Game Theory in the Firm</h2>
+          <ul>
+            <li class="fragment">So far, markets coordinated efforts through prices</li>
+            <li class="fragment">When markets are not efficient, need other ways to coordinat, e.g.e <ul>
+              <li class="fragment">Firms</li>
+              <li class="fragment">Contracts (within or between firms)</li>
+            </ul></li>
+            <li class="fragment">Difficulty: asymmetric information about actions</li>
+            <li class="fragment">You may not know who did what well when all you see is the final product</li>
+            <li class="fragment"><em>Moral Hazard</em></li>
+            <li class="fragment">This week, we'll discuss in a team context</li>
+          </ul>
         </section>
         <section>
-          <h2>Team production and free-riding</h2>
+          <h2>Team production</h2>
+          <ul>
+            <li class="fragment">When many work on a project, individual contributions are unclear</li>
+            <li class="fragment">Rewards are usually based on total performance</li>
+            <li class="fragment">Leads to <em>free-rider</em> problem</li>
+            <li class="fragment">Simple model of team production: <ul>
+              <li class="fragment">Costs and benefits measured in money</li>
+              <li class="fragment">If team members exert efforts $e_i$, $i=1,2,\ldots, n$</li>
+              <li class="fragment">Quantity (sold at price $p$) is $e_1+\ldots+e_n$</li>
+              <li class="fragment">Costs (individual) are $c_i(e_i)=\frac 12 e_i^2$</li>
+            </ul></li>
+          </ul>
         </section>
         <section>
           <h2>Efficient outcome</h2>
+          <ul>
+            <li class="fragment">The value created is $V(e_1,\ldots,e_n)=p\cdot(e_1+\ldots+e_n)-(\frac 12 e_1^2+\ldots+\frac 12 e_n^2$)</li>
+            <li class="fragment">Maximizing this value w.r.t. $e_i$</li>
+            <li class="fragment">FOC:$p-e_i=0$, or $e^*=p$</li>
+            <li class="fragment">Is efficient outcome unique? <ul>
+              <li class="fragment">Productive vs allocative efficiency</li>
+            </ul></li>
+          </ul>
         </section>
         <section>
           <h2>Nash of Team</h2>
+          <ul>
+            <li class="fragment">What is the Nash equilibrium if every employee decides efforts individually and they split profits equally?</li>
+            <li class="fragment">$\Pi_i(e_1,\ldots,e_n)=\frac 1n p\cdot(e_1+\ldots+e_n)-\frac 12 e_i^2$</li>
+            <li class="fragment">FOC: $\frac 1n p - e_i=0$, or $e_i=\frac pn$</li>
+            <li class="fragment">(This is a dominant strategy; extreme simplification)</li>
+            <li class="fragment">$e_i\lt e^*$, and it gets worse as $n\uparrow$</li>
+            <li class="fragment">Free-rider problem: your effort benefits everyone, you only work for your slice</li>
+            <li class="fragment">Very bad underproduction (positive externalities)</li>
+          </ul>
         </section>
         <section>
           <h2>Solving Free-riding</h2>
+          <ul>
+            <li class="fragment">Employers don't like their employees slacking; Societies don't like shortages of public goods</li>
+            <li class="fragment">What can be done?</li>
+            <li class="fragment">Firms: <ul>
+              <li class="fragment">
+                Closer monitoring (so more tailored rewards)
+              </li>
+              <li class="fragment">
+                Different contracts
+                <ul>
+                  <li class="fragment">Bonus contracts (next week)</li>
+                  <li class="fragment">Comparative performance Contracts: <ul>
+                    <li class="fragment">Direct competition</li>
+                    <li class="fragment">Tournaments</li>
+                  </ul></li>
+                </ul>
+              </li>
+            </ul></li>
+            <li class="fragment">Society: <ul>
+              <li class="fragment">Repeated interaction (week 5)</li>
+            </ul></li>
+          </ul>
+        </section>
+        <section style="font-size: 30px;">
+          <h2>Tournaments</h2>
+          <ul>
+            <li class="fragment">Suppose firm only gives reward $v$ to hardest-working employee (no other payments)</li>
+            <li class="fragment">Firm cannot monitor perfectly, so the probability that you are selected is<br\> $P_i(e_1,\ldots,e_n)=\dfrac{e_i}{(e_1+\ldots+e_n)}$</li>
+            <li class="fragment">$\Pi_i(e_1,\ldots,e_n)=v\dfrac{e_i}{(e_1+\ldots+e_n)}-\frac 12 e_i^2$</li>
+            <li class="fragment">FOC for $i$: $\dfrac{(e_1+\ldots+e_n)-e_i}{(e_1+\ldots+e_n)^2}-e_i=0$</li>
+            <li class="fragment">True for all $i$; algebra gives $e_i=\frac 1n \sqrt{v(n-1)}$</li>
+            <li class="fragment">What reward should the firm give for efficient effort?</li>
+            <li class="fragment">$e^*=p=\frac 1n \sqrt{v(n-1)}$, or $v=\dfrac{n^2p^2}{n-1}$</li>
+            <li class="fragment">Value of efficient project is $n(pe^*-\frac 12 e^{*2})=\frac 12 np^2$</li>
+            <li class="fragment">Value over costs &xrarr; $\frac 12$ as $n \rightarrow \infty$</li>
+          </ul>
         </section>
         <section>
           <h2>Comparative performance Evaluation</h2>
-          Point out that this assumes all the info, the lack of which was the
-          problem
-        </section>
-        <section>
-          <h2>Tournaments</h2>
-        </section>
-        <section>
-          <h2>Downsides of comparative evaluation</h2>
-        </section>
-        <section>
-          <h2></h2>
-        </section>
-        <section>
-          <h2></h2>
-        </section>
-        <section>
-          <h2></h2>
+          <ul>
+            <li class="fragment">Instead, firm could choose an even more competitive payment structure:</li>
+            <li class="fragment">For two employees, pay bonus $\beta$ for the difference in efforts: $\beta(e_1-e_2)$</li>
+            <li class="fragment">Employee payoff: $\beta(e_1-e_2) - e_1^2$</li>
+            <li class="fragment">FOC: $\beta-e_1=0$, or $e_1=\beta$</li>
+            <li class="fragment">If employer sets $\beta=p$, this will lead to efficient production (and profit for the firm)</li>
+            <li class="fragment">Can you spot some issue with this scheme?</li>
+          </ul>
         </section>
       </div>
     </div>
@@ -369,7 +715,10 @@
     <script src="mj-notation.js"></script>
     <script>
       Reveal.initialize({
+        width: 1560,
+        height: 720,
         hash: true,
+        transition: "convex",
         mathjax4: MJNotation.mathjax4(),
         plugins: [RevealMath.MathJax4, RevealNotes],
       });
