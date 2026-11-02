@@ -18,12 +18,14 @@
 
     <link rel="stylesheet" href="custom.css" />
 
-    <!-- JSXGraph: used for the implicit-circle and Taylor approximation slides -->
+    <!-- JSXGraph (the script itself is loaded once, at the bottom of the page) -->
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css"
+      href="jsxgraph/jsxgraph.css"
     />
-    <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+
+    <!-- Size of the 3D plot boxes: best moved into custom.css / the slide kit -->
+    
   </head>
   <body>
     <div class="reveal">
@@ -728,7 +730,7 @@
        mathjax4: MJNotation.mathjax4(),
        plugins: [RevealMath.MathJax4, RevealNotes],
      });
-    </script>
+
      // The function from option 1
      const f = (x, y) =>
        Math.sin(x) * Math.cos(1.3 * y)
