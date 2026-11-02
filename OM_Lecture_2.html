@@ -59,7 +59,7 @@
         </section>
         <section>
           <h2>Best Response and Nash Equilibrium</h2>
-          <div class="cols" style="--cols: 2fr 1fr; --align: center">
+          <div class="cols" style="--cols: 2.5fr 1fr; --align: center">
             <ul>
               <li class="fragment">What to predict?</li>
               <li class="fragment">
@@ -272,6 +272,10 @@
               </ul>
             </li>
           </ul>
+        </section>
+        <section>
+          <h2>Multiplicity of Equilibria</h2>
+          <div id="plot1" class="jxgbox plot3d"></div>
         </section>
         <section>
           <h2>Matching Pennies</h2>
@@ -713,15 +717,32 @@
     <script src="dist/plugin/math.js"></script>
     <script src="dist/plugin/notes.js"></script>
     <script src="mj-notation.js"></script>
+    <script src="jsxgraph/jsxgraphcore.js"></script>
+    <script src="mj-plot3d.js"></script>
     <script>
-      Reveal.initialize({
-        width: 1560,
-        height: 720,
-        hash: true,
-        transition: "convex",
-        mathjax4: MJNotation.mathjax4(),
-        plugins: [RevealMath.MathJax4, RevealNotes],
-      });
+     Reveal.initialize({
+       width: 1560,
+       height: 720,
+       hash: true,
+       transition: "convex",
+       mathjax4: MJNotation.mathjax4(),
+       plugins: [RevealMath.MathJax4, RevealNotes],
+     });
+    </script>
+     // The function from option 1
+     const f = (x, y) =>
+       Math.sin(x) * Math.cos(1.3 * y)
+                     + 0.6 * Math.sin(1.9 * x + 0.7 * y)
+                     + 0.4 * Math.cos(2.7 * x - 1.6 * y + 1)
+                     + 0.3 * Math.sin(0.8 * x - 2.3 * y);
+
+     plot3D('plot1', f, {
+       x: [-5, 5],
+       y: [-5, 5],
+       steps: 45,
+       color: '#c2410c',
+       projection: 'central'
+     });
     </script>
   </body>
 </html>
