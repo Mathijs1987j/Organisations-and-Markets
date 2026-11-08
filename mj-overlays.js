@@ -2,6 +2,8 @@
 //
 //   <g data-show="3, 5-8, 11">   visible at steps 3, 5 to 8, and 11
 //   <li data-show="2-">          visible from step 2 on
+//   <li data-dim="4-">           grayed out from step 4 on (like Beamer's
+//                                \setbeamercovered{transparent})
 //
 // Step n is the moment the fragments with data-fragment-index="n" appear;
 // step 0 is the slide before any fragment. Hidden elements keep their space
@@ -27,17 +29,19 @@ window.MJOverlays = {
           return [lo, hi];
         });
 
-    const elements = [...deck.getSlidesElement().querySelectorAll("[data-show]")];
+    const selector = "[data-show], [data-dim]";
+    const elements = [...deck.getSlidesElement().querySelectorAll(selector)];
     for (const el of elements) {
-      el.mjRanges = parse(el.dataset.show);
+      el.mjShow = el.dataset.show === undefined ? null : parse(el.dataset.show);
+      el.mjDim = el.dataset.dim === undefined ? null : parse(el.dataset.dim);
     }
 
     // Invisible fragments that create the steps 1, 2, ... on each slide.
     // data-mj-step keeps the step number: reveal renumbers fragment indices.
     for (const slide of new Set(elements.map((el) => el.closest("section")))) {
       let max = 0;
-      for (const el of slide.querySelectorAll("[data-show]")) {
-        for (const [lo, hi] of el.mjRanges) {
+      for (const el of slide.querySelectorAll(selector)) {
+        for (const [lo, hi] of [...(el.mjShow ?? []), ...(el.mjDim ?? [])]) {
           max = Math.max(max, lo, Number.isFinite(hi) ? hi : 0);
         }
       }
@@ -52,7 +56,9 @@ window.MJOverlays = {
     }
 
     const style = document.createElement("style");
-    style.textContent = ".reveal .mj-hidden { visibility: hidden; }";
+    style.textContent =
+      ".reveal .mj-hidden { visibility: hidden; }\n" +
+      ".reveal .mj-dim { opacity: 0.25; }";
     document.head.appendChild(style);
 
     // Show or hide each element for the current step of the current slide.
@@ -63,9 +69,10 @@ window.MJOverlays = {
       for (const marker of slide.querySelectorAll(".fragment.visible[data-mj-step]")) {
         step = Math.max(step, Number(marker.dataset.mjStep));
       }
-      for (const el of slide.querySelectorAll("[data-show]")) {
-        const on = el.mjRanges.some(([lo, hi]) => step >= lo && step <= hi);
-        el.classList.toggle("mj-hidden", !on);
+      const at = (ranges) => ranges.some(([lo, hi]) => step >= lo && step <= hi);
+      for (const el of slide.querySelectorAll(selector)) {
+        if (el.mjShow) el.classList.toggle("mj-hidden", !at(el.mjShow));
+        if (el.mjDim) el.classList.toggle("mj-dim", at(el.mjDim));
       }
     };
 

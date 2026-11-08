@@ -1,0 +1,70 @@
+/* gametree.css — styles for gametree.js */
+
+.gt {
+  /* Change these per deck, per slide, or per tree (style="--gt-p1: ..."). */
+  --gt-p1: #1f6fb2;        /* player 1 (and 1st payoff component) */
+  --gt-p2: #c0392b;        /* player 2 */
+  --gt-p3: #2e8b57;        /* player 3 */
+  --gt-p4: #8e44ad;        /* player 4 */
+  --gt-nature: #777;       /* chance nodes */
+  --gt-value: #e69500;     /* border of value boxes */
+  --gt-font-size: 0.55em;  /* labels, relative to the slide's font size */
+
+  position: relative;
+  margin: 0 auto;
+  font-size: var(--gt-font-size);
+  line-height: 1.2;
+}
+
+.gt > svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: visible;
+}
+
+/* lines and nodes follow the colour of the text */
+.gt .gt-edge    { stroke: currentColor; stroke-width: 1.5; }
+.gt .gt-infoset { stroke: currentColor; stroke-width: 1.5; stroke-dasharray: 6 5; fill: none; }
+.gt .gt-node    { fill: currentColor; }
+.gt .gt-leaf    { fill: currentColor; }
+.gt .gt-chance  { fill: var(--r-background-color, #fff); stroke: currentColor; stroke-width: 1.5; }
+
+/* highlighted moves take the colour of the player who moves (class gt-pK) */
+.gt .gt-hl { stroke: currentColor; stroke-width: 5; stroke-linecap: round; }
+
+/* player colours: labels, payoff components, highlights */
+.gt .gt-p1 { color: var(--gt-p1); }
+.gt .gt-p2 { color: var(--gt-p2); }
+.gt .gt-p3 { color: var(--gt-p3); }
+.gt .gt-p4 { color: var(--gt-p4); }
+.gt .gt-nature { color: var(--gt-nature); }
+
+/* labels */
+.gt .gt-label  { position: absolute; white-space: nowrap; }
+.gt .gt-player { font-weight: bold; }
+
+/* value boxes: to the right of the player label (left for left children) */
+.gt .gt-value {
+  position: absolute;
+  left: 100%;
+  bottom: 0;
+  margin-left: 0.4em;
+  white-space: nowrap;
+}
+.gt .gt-value.gt-left { left: auto; right: 100%; margin-left: 0; margin-right: 0.4em; }
+.gt .gt-value-box {
+  display: inline-block;
+  padding: 0 0.25em;
+  border: 2px solid var(--gt-value);
+  border-radius: 0.3em;
+  color: var(--r-main-color, #222);
+}
+
+/* Grayed-out subgames: always (gt-dimmed), or from a fragment step on (gt-dim).
+   Reveal.js hides a fragment until its step; for gt-dim that is turned around:
+   visible until its step, faded from then on. With MJOverlays (data-dim) the
+   plugin's own mj-dim class does this. */
+.gt .gt-dimmed                                   { opacity: 0.25; }
+.reveal .slides section .gt-dim.fragment         { opacity: 1; visibility: inherit; }
+.reveal .slides section .gt-dim.fragment.visible { opacity: 0.25; }

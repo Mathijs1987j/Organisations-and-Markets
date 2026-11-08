@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>OM Lecture 3</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="dist/plugin/highlight/monokai.css" />
+    <link rel="stylesheet" href="custom.css" />
+    <link rel="stylesheet" href="gametree.css" />
+
+    <!-- JSXGraph: used for the implicit-circle and Taylor approximation slides -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides" style="font-size: 35px">
+        <section>
+          <h2>Time and Games</h2>
+          <div class="cols" style="--cols: 4.5fr 1fr; --align: center">
+            <div>
+              <div id="competition" style="zoom: 1.5"></div>
+              <div class="r-stack">
+                <p data-show="1-3">What is a strategy for $E$?</p>
+                <p data-show="4-8">What is a strategy for $I$?</p>
+                <p data-show="9">What is an equilibrium?</p>
+                <p data-show="10-11">
+                  Nash: strategies that best respond to each other.
+                </p>
+                <p data-show="12">
+                  Nash: strategies that best respond to each other!?
+                </p>
+                <p data-show="14">This action hurts $I$</p>
+                <p data-show="15">
+                  But he never actually has to do it: it is <em>off path</em>
+                </p>
+                <p data-show="16">This is a threat, but it is not credible</p>
+                <p data-show="17">
+                  Subgame Perfect Nash Equilibrium: don't allow non-credible
+                  threats
+                </p>
+                <p data-show="18">
+                  Every <em>subgame</em> (also off path) has to be Nash too
+                </p>
+                <p data-show="19">
+                  We can find subgame perfect Nash equilibria by backward
+                  induction
+                </p>
+              </div>
+            </div>
+            <div class="balloon-wrap">
+              <img
+                src="Selten.webp"
+                data-show="13-"
+                alt="Reinhard Selten, originator of the subgame perfection concept."
+              />
+              <div
+                class="balloon flip"
+                data-show="13"
+                style="left: -35%; top: -8%"
+              >
+                That's stupid.
+              </div>
+              <div data-show="13-">Reinhard Selten</div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <h2>Basic Principal-Agent Model</h2>
+          <div id="shirking" style="zoom: 1.5"></div>
+          <div class="r-stack">
+            <p data-show="0">
+              SPNE selects reasonable equilibria from all Nash equilibria
+            </p>
+            <p data-show="1">Does it mean it selects good outcomes?</p>
+            <p data-show="6">
+              Pareto dominated equilibrium: contracts can improve situation
+            </p>
+          </div>
+        </section>
+        <section>
+          <h2>Principal-Agent Models</h2>
+          <ul>
+            <li class="fragment">
+              Principal has some project he wants carried out
+            </li>
+            <li class="fragment">Agent could carry it out</li>
+            <li class="fragment">
+              For example:
+              <ul>
+                <li class="fragment">Employer-employee</li>
+                <li class="fragment">Investor-entrepreneur</li>
+                <li class="fragment">Voters-politician</li>
+              </ul>
+            </li>
+            <li class="fragment">
+              Principal can usually not observe everything agent does:
+              <ul>
+                <li class="fragment"><em>Moral Hazard</em></li>
+              </ul>
+            </li>
+            <li class="fragment">Last week (not quite): work in teams</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Team production</h2>
+          <ul>
+            <li class="fragment">
+              When many work on a project, individual contributions are unclear
+            </li>
+            <li class="fragment">
+              Rewards are usually based on total performance
+            </li>
+            <li class="fragment">Leads to <em>free-rider</em> problem</li>
+            <li class="fragment">
+              Simple model of team production:
+              <ul>
+                <li class="fragment">Costs and benefits measured in money</li>
+                <li class="fragment">
+                  If team members exert efforts $e_i$, $i=1,2,\ldots, n$
+                </li>
+                <li class="fragment">
+                  Quantity (sold at price $p$) is $e_1+\ldots+e_n$
+                </li>
+                <li class="fragment">
+                  Costs (individual) are $c_i(e_i)=\frac 12 e_i^2$
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Efficient outcome</h2>
+          <ul>
+            <li class="fragment">
+              The value created is
+              $V(e_1,\ldots,e_n)=p\cdot(e_1+\ldots+e_n)-(\frac 12
+              e_1^2+\ldots+\frac 12 e_n^2$)
+            </li>
+            <li class="fragment">Maximizing this value w.r.t. $e_i$</li>
+            <li class="fragment">FOC: $p-e_i=0$, or $e^*=p$</li>
+            <li class="fragment">
+              Is efficient outcome unique?
+              <ul>
+                <li class="fragment">Productive vs allocative efficiency</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Nash of Team</h2>
+          <ul>
+            <li class="fragment">
+              What is the Nash equilibrium if every employee decides efforts
+              individually and they split profits equally?
+            </li>
+            <li class="fragment">
+              $\Pi_i(e_1,\ldots,e_n)=\frac 1n p\cdot(e_1+\ldots+e_n)-\frac 12
+              e_i^2$
+            </li>
+            <li class="fragment">
+              FOC: $\frac 1n p - e_i=0$, or $e_i=\frac pn$
+            </li>
+            <li class="fragment">
+              (This is a dominant strategy; extreme simplification)
+            </li>
+            <li class="fragment">
+              $e_i\lt e^*$, and it gets worse as $n\uparrow$
+            </li>
+            <li class="fragment">
+              Free-rider problem: your effort benefits everyone, you only work
+              for your slice
+            </li>
+            <li class="fragment">
+              Very bad underproduction (positive externalities)
+            </li>
+          </ul>
+        </section>
+      </div>
+    </div>
+    <script src="dist/reveal.js"></script>
+    <script src="dist/plugin/math.js"></script>
+    <script src="dist/plugin/notes.js"></script>
+    <script src="mj-notation.js"></script>
+    <script src="mj-overlays.js"></script>
+    <script src="gametree.js"></script>
+    <script>
+      const competition = {
+        player: "E",
+        id: "s",
+        moves: {
+          Out: {
+            player: "I",
+            id: "out",
+            moves: { "Cut Price": [0, -1], "Normal Price": [0, 2] },
+          },
+          In: {
+            player: "I",
+            id: "in",
+            moves: { "Cut Price": [-1, -1], "Normal Price": [1, 1] },
+          },
+        },
+      };
+
+      const shirking = {
+        player: "Agent",
+        id: "s",
+        moves: {
+          Shirk: [0, 0],
+          Work: {
+            player: "Principal",
+            id: "w",
+            moves: { Bonus: [1, 1], "No Bonus": [-1, 3] },
+          },
+        },
+      };
+
+      // First entry game
+      gameTree("#competition", competition, {
+        xGap: 150,
+        highlight: [
+          { choices: { s: "Out" }, when: "2" },
+          { choices: { s: "In" }, when: "3" },
+          { choices: { in: "Cut Price", out: "Cut Price" }, when: "5" },
+          { choices: { in: "Cut Price", out: "Normal Price" }, when: "6" },
+          { choices: { in: "Normal Price", out: "Cut Price" }, when: "7" },
+          { choices: { in: "Normal Price", out: "Normal Price" }, when: "8" },
+          {
+            choices: { s: "In", in: "Normal Price", out: "Normal Price" },
+            when: "11",
+          },
+          {
+            choices: { s: "Out", in: "Cut Price", out: "Normal Price" },
+            when: "12-13, 15",
+          },
+          { choices: { in: "Cut Price" }, when: "14, 16-18" },
+          { choices: { in: "Normal Price" }, when: "20-" },
+          { choices: { out: "Normal Price" }, when: "22-" },
+          { choices: { s: "In" }, when: "24-" },
+        ],
+        focus: [
+          { node: "in", when: "14-18, 20" },
+          { node: "out", when: "22" },
+          { node: "s", when: "24" },
+        ],
+        solved: [
+          { node: "in", when: "21-24", value: [1, 1] },
+          { node: "out", when: "23-24", value: [2, 0] },
+          { node: "s", when: "25", value: [1, 1] },
+        ],
+      });
+
+      // Shirking game
+      gameTree("#shirking", shirking, {
+        xGap: 150,
+        highlight: [
+          { choices: { w: "No Bonus" }, when: "3-" },
+          { choices: { s: "Shirk" }, when: "5-" },
+        ],
+        focus: [{ node: "w", when: "2-3" }],
+        solved: [
+          { node: "w", when: "4-", value: [-1, 3] },
+          { node: "s", when: "6", value: [0, 0] },
+        ],
+      });
+    </script>
+
+    <script>
+      Reveal.initialize({
+        width: 1560,
+        height: 720,
+        hash: true,
+        transition: "convex",
+        mathjax4: MJNotation.mathjax4(),
+        plugins: [RevealMath.MathJax4, RevealNotes, MJOverlays],
+      });
+    </script>
+  </body>
+</html>

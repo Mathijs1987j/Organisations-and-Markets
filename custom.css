@@ -165,6 +165,40 @@
 }
 
 /* ==================================================================
+   Speech balloon
+   ================================================================== */
+.balloon-wrap {
+	position: relative;
+	display: inline-block;
+}
+
+.balloon {
+	position: absolute;
+	background: white;
+	color: black;
+	border: 3px solid black;
+	border-radius: 1em;
+	padding: 0.3em 0.6em;
+	font-size: 0.8em;
+}
+
+.balloon::after {
+	content: "";
+	position: absolute;
+	right: 1em;
+	bottom: -0.8em;
+	border-style: solid;
+	border-width: 0.8em 0.8em 0 0;
+	border-color: black transparent transparent transparent;
+}
+
+.balloon.flip::after {
+	left: auto;
+	right: 1em;
+	border-width: 0.8em 0 0 0.8em;
+}
+
+/* ==================================================================
    Deprecated: old decks only. New slides use .cols.
    Delete once no deck uses these classes.
    ================================================================== */
