@@ -484,6 +484,210 @@
             <div id="singlem" data-show="1" style="zoom: 1.5"></div>
           </div>
         </section>
+        <section>
+          <h2>Entry with Fixed Costs</h2>
+          <ul>
+            <li class="fragment">
+              Week 1: price-taking equilibrium is efficient (and exists)
+            </li>
+            <li class="fragment">We mostly omitted production</li>
+            <li class="fragment">
+              For equilibrium with production, need additional assumption:
+              <ul>
+                <li class="fragment">
+                  Convexity of production frontier ($\approx$ no weird jumps in
+                  cost of production)
+                </li>
+              </ul>
+            </li>
+            <li class="fragment">
+              Unfortunately, jumps in the costs of production are very natural:
+              <em class="fragment">Fixed costs</em>
+            </li>
+            <li class="fragment">
+              This breaks the equilibrium model
+              <ul>
+                <li class="fragment">price taking assumption cannot hold</li>
+              </ul>
+            </li>
+            <ul>
+              <li class="fragment">
+                Strategic models exist, but are inefficient
+              </li>
+            </ul>
+          </ul>
+        </section>
+        <section>
+          <h2>Fixed costs and Efficiency</h2>
+          <ul>
+            <li class="fragment">
+              Producing good has constant marginal cost $c$ and one time entry
+              (start-up) cost $F$
+            </li>
+            <li class="fragment">
+              Demand is $D(p)=S(1-p)$, where $S$ is the size of the market
+            </li>
+            <li class="fragment">
+              Efficiency requires producing until the willingness to pay in the
+              market decreases to $c$
+            </li>
+            <li class="fragment">
+              I.e. until $p(Q)=1-\frac QS = c \iff Q=S(1-c)$
+            </li>
+            <li class="fragment">
+              How many firms should enter into the market?
+            </li>
+            <li class="fragment">
+              Only 1; more just adds to the fixed costs (because marginal cost
+              is constant)
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Fixed costs and the Market</h2>
+          <ul>
+            <li class="fragment">Price taking market: Supply$=$Demand</li>
+            <li class="fragment">Demand: $D(p)=S(1-p)>0$, if $c\lt1$</li>
+            <li class="fragment">
+              Supply:
+              <ul>
+                <li class="fragment">$\Pi(Q)=Q(p-c)-F$</li>
+                <li class="fragment">If $p>c$, supply is unbounded</li>
+                <li class="fragment">If $p\lt c$, supply is 0</li>
+                <li class="fragment">
+                  If $p=c$, supply is still zero! &#x21AF;
+                </li>
+              </ul>
+            </li>
+            <li class="fragment">
+              The market does not clear for any price: no equilibrium!
+            </li>
+            <li class="fragment">
+              Natural monopoly: price-taking assumption cannot hold
+            </li>
+            <li class="fragment">
+              Need models of trategic competition: Cournot
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Fixed costs, Entry and Cournot</h2>
+          <ul>
+            <li class="fragment">$D(p)=S(1-p) \iff p=1-\frac QS$</li>
+            <li class="fragment">
+              Production has marginal cost $c=0$ and fixed cost $F$
+            </li>
+            <li class="fragment">
+              Two stage game
+              <ol>
+                <li class="fragment">
+                  Firms choose whether to enter (paying $F$) or not
+                </li>
+                <li class="fragment">Entered firms set $q_i$</li>
+              </ol>
+            </li>
+            <li class="fragment">
+              Denote $Q_{\neg i}$ the supply set by all firms other than firm
+              $i$ and by $Q$ total production
+            </li>
+            <li class="fragment">
+              Second stage (denote $n$ the number of firms that entered in stage
+              1)
+              <ul>
+                <li class="fragment">
+                  $\Pi(q_i)=q_i(p-c)=q_i(1-\frac{q_i+Q_{\neg i}}S)$
+                </li>
+                <li class="fragment">
+                  FOC: $1-\frac{2q_i+Q_{\neg i}}S=0=1-\frac{q_i+Q}S$
+                </li>
+                <li class="fragment">
+                  This is true for all $n$ firms that entered
+                </li>
+                <li class="fragment">So we can sum over all $n$ firms</li>
+                <li class="fragment">
+                  $0=n-\frac{Q+nQ}S \iff Q=\frac{nS}{n+1} \iff p=\frac1{n+1}$
+                </li>
+                <li class="fragment">Symmetry implies $q_i=\frac S{n+1}$</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Fixed costs, Entry and Cournot</h2>
+          <ul>
+            <li class="fragment">
+              In stage 2: $p=\frac1{n+1}$ and $q_i=\frac S{n+1}$
+            </li>
+            <li class="fragment">$\Pi_i=q(p-c)-F=\frac S{(n+1)^2}-F$</li>
+            <li class="fragment">
+              Stage 1
+              <ul>
+                <li class="fragment">
+                  Firms enter as long as profit is positive
+                </li>
+                <li class="fragment">
+                  $\Pi_i=\frac S{(n+1)^2}-F=0 \iff n=\sqrt{\frac SF}-1$
+                </li>
+                <li class="fragment">
+                  $n^*$ is the largest integer $n$ smaller than that
+                </li>
+                <li class="fragment">
+                  E.g. if $\sqrt{\frac SF}-1=3.456$, 3 firms enter
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Entry, Cournot and Efficiency</h2>
+          <ul>
+            <li class="fragment">
+              We know efficiency requires $p=c$ and $n=1$
+            </li>
+            <li class="fragment">Cournot has $p>c$ and $n>1$</li>
+            <li class="fragment">But increasing $n$ increases competition</li>
+            <li class="fragment">
+              As $S\uparrow$, $p\downarrow$ (good for efficiency) and
+              $n\uparrow$ (bad for efficiency)
+            </li>
+            <li class="fragment">Perhaps surprisingly, second effect wins</li>
+            <li class="fragment">
+              Strategic competition not even "second-best"
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Entry, Cournot and Efficiency</h2>
+          <ul>
+            <li class="fragment">$D(p)=S(1-p)$</li>
+            <li class="fragment">
+              Welfare
+              <ul>
+                <li class="fragment">
+                  $W=CS+PS-FC=\frac 12 (p_{max}-p^*)q^*+(p^*-c)q^*-nF$
+                </li>
+                <li class="fragment">$=\frac 12 S(1-p)^2 +S(1-p)p-nF$</li>
+                <li class="fragment">$=\frac 12 S(1-\frac 1{(n+1)^2})-nF$</li>
+              </ul>
+            </li>
+            <li class="fragment">
+              Optimal number of firms, given Cournot competition
+              <ul>
+                <li class="fragment">
+                  FOC: $\dfrac S{(n+1)^3}-F=0 \iff n=\sqrt[3]{\frac SF}-1$
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Equilibrium vs Second-Best</h2>
+          <div
+            id="plot"
+            class="jxgbox"
+            style="width: 1300px; height: 700px"
+          ></div>
+        </section>
       </div>
     </div>
     <script src="dist/reveal.js"></script>
@@ -596,6 +800,40 @@
       gameTree("#doublem2", doublem);
       gameTree("#doublem3", doublem);
       gameTree("#singlem", singlem);
+    </script>
+    <script>
+      const F = 0.1; // your value of F
+
+      const f = (S) => Math.sqrt(S / F) - 1; // √(S/F) − 1
+      const g = (S) => Math.cbrt(S / F) - 1; // ∛(S/F) − 1
+
+      const board = JXG.JSXGraph.initBoard("plot", {
+        boundingbox: [-1, 9, 10.5, -1], // [xmin, ymax, xmax, ymin]
+        axis: true,
+        defaultAxes: {
+          x: {
+            ticks: { visible: false },
+            name: "\\(S\\)",
+            withLabel: true,
+            label: { position: "rt", offset: [-20, -25], useMathJax: true, fontSize: 28 },
+          },
+          y: {
+            ticks: { visible: false },
+            name: "\\(n\\)",
+            withLabel: true,
+            label: { position: "rt", offset: [10, -10], useMathJax: true, fontSize: 28 },
+          },
+        },
+        showCopyright: false,
+        showNavigation: false,
+      });
+
+      board.create("functiongraph", [f, 0, 8], { strokeColor: "#1f6fb2", strokeWidth: 3 });
+      board.create("functiongraph", [g, 0, 8], { strokeColor: "#c0392b", strokeWidth: 3 });
+
+      // curve names at the right-hand ends of the curves
+      board.create("text", [8.15, f(8), "Equilibrium"], { color: "#1f6fb2", fontSize: 28 });
+      board.create("text", [8.15, g(8), "Efficiency"], { color: "#c0392b", fontSize: 28 });
     </script>
 
     <script>
