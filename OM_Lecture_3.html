@@ -532,7 +532,7 @@
               market decreases to $c$
             </li>
             <li class="fragment">
-              I.e. until $p(Q)=1-\frac QS = c \iff Q=S(1-c)$
+              I.e. until $ p=c \iff p(Q)=1-\frac QS = c \iff Q=S(1-c)$
             </li>
             <li class="fragment">
               How many firms should enter into the market?
@@ -590,9 +590,18 @@
               Denote $Q_{\neg i}$ the supply set by all firms other than firm
               $i$ and by $Q$ total production
             </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Fixed costs, Entry and Cournot</h2>
+          <ul>
             <li class="fragment">
-              Second stage (denote $n$ the number of firms that entered in stage
-              1)
+              Denote $Q_{\neg i}$ the supply set by all firms other than firm
+              $i$ and by $Q$ total production
+            </li>
+            <li class="fragment">
+              Second stage stage (denote $n$ the number of firms that entered in
+              stage 1)
               <ul>
                 <li class="fragment">
                   $\Pi(q_i)=q_i(p-c)=q_i(1-\frac{q_i+Q_{\neg i}}S)$
@@ -804,8 +813,8 @@
     <script>
       const F = 0.1; // your value of F
 
-      const f = (S) => Math.sqrt(S / F) - 1; // √(S/F) − 1
-      const g = (S) => Math.cbrt(S / F) - 1; // ∛(S/F) − 1
+      const f = (S) => Math.sqrt(S / F) - 1; //  (S/F)   1
+      const g = (S) => Math.cbrt(S / F) - 1; //  (S/F)   1
 
       const board = JXG.JSXGraph.initBoard("plot", {
         boundingbox: [-1, 9, 10.5, -1], // [xmin, ymax, xmax, ymin]
@@ -815,25 +824,47 @@
             ticks: { visible: false },
             name: "\\(S\\)",
             withLabel: true,
-            label: { position: "rt", offset: [-20, -25], useMathJax: true, fontSize: 28 },
+            label: {
+              position: "rt",
+              offset: [-20, -25],
+              useMathJax: true,
+              fontSize: 28,
+            },
           },
           y: {
             ticks: { visible: false },
             name: "\\(n\\)",
             withLabel: true,
-            label: { position: "rt", offset: [10, -10], useMathJax: true, fontSize: 28 },
+            label: {
+              position: "rt",
+              offset: [10, -10],
+              useMathJax: true,
+              fontSize: 28,
+            },
           },
         },
         showCopyright: false,
         showNavigation: false,
       });
 
-      board.create("functiongraph", [f, 0, 8], { strokeColor: "#1f6fb2", strokeWidth: 3 });
-      board.create("functiongraph", [g, 0, 8], { strokeColor: "#c0392b", strokeWidth: 3 });
+      board.create("functiongraph", [f, 0, 8], {
+        strokeColor: "#1f6fb2",
+        strokeWidth: 3,
+      });
+      board.create("functiongraph", [g, 0, 8], {
+        strokeColor: "#c0392b",
+        strokeWidth: 3,
+      });
 
       // curve names at the right-hand ends of the curves
-      board.create("text", [8.15, f(8), "Equilibrium"], { color: "#1f6fb2", fontSize: 28 });
-      board.create("text", [8.15, g(8), "Efficiency"], { color: "#c0392b", fontSize: 28 });
+      board.create("text", [8.15, f(8), "Equilibrium"], {
+        color: "#1f6fb2",
+        fontSize: 28,
+      });
+      board.create("text", [8.15, g(8), "Efficiency"], {
+        color: "#c0392b",
+        fontSize: 28,
+      });
     </script>
 
     <script>
