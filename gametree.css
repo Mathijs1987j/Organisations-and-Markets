@@ -41,7 +41,9 @@
 .gt .gt-nature { color: var(--gt-nature); }
 
 /* labels */
-.gt .gt-label  { position: absolute; white-space: nowrap; }
+/* width: max-content: never squeeze labels into the tree's own width
+   (a one-column tree is only 2 × margin wide) */
+.gt .gt-label  { position: absolute; white-space: nowrap; width: max-content; }
 .gt .gt-player { font-weight: bold; }
 
 /* value boxes: to the right of the player label (left for left children) */
