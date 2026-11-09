@@ -79,6 +79,9 @@
           </div>
         </section>
         <section>
+          <h1>Dynamic Games inside the firm</h1>
+        </section>
+        <section>
           <h2>Basic Principal-Agent Model</h2>
           <div id="shirking" style="zoom: 1.5"></div>
           <div class="r-stack">
@@ -116,81 +119,155 @@
           </ul>
         </section>
         <section>
-          <h2>Basic Principal-Agent Model and Linear Contracts</h2>
+          <h2>Basic Principal-Agent Model and Efficiency</h2>
           <ul>
-            <li class="fragment">Papa has a lovely little girl, Antonella</li>
             <li class="fragment">
-              When Antonella plays quitely, Papa can work and earn $p$
-              &euro;/hour
+              Porfirio owns a machine. Operating the machine for $e$ hours
+              produces $e$ units of a good with price $p$
             </li>
             <li class="fragment">
-              Antonella does not like to play quietly:
+              Ambrosius can operate the machine, at a cost $\frac 12 e^2$ for
+              $e$ hours of operation
+            </li>
+            <li class="fragment">What is an efficient allocation?</li>
+            <li class="fragment">$V(e)=ep-\frac 12 e^2$</li>
+            <li class="fragment">FOC: $p-e=0$ &rArr; $e=p$</li>
+            <li class="fragment">
+              Is efficient outcome unique?
               <ul>
-                <li class="fragment">
-                  Effort of playing quietly for $e$ hours costs &euro;$\frac 12
-                  e^2$
-                </li>
+                <li class="fragment">Productive vs allocative efficiency</li>
               </ul>
             </li>
-            <li class="fragment">Papa can bribe Antonella to play quitely</li>
+            <li class="fragment">$V(e^*)=p^2-\frac 12 p^2=\frac 12 p^2$</li>
             <li class="fragment">
-              Papa chooses $\beta$, how much he pays Antonella for every quiet
-              hour
+              Any outcome that yields that overall value is efficient, and only
+              those
             </li>
           </ul>
         </section>
         <section>
-          <h2>Efficient outcome and Bonus</h2>
+          <h2>Principal Agent and the Market</h2>
           <ul>
             <li class="fragment">
-              Denote $Q$ the hours Papa works, $e$ Antonella's effort
+              Suppose both Porfirio and Ambrosius were price takers
             </li>
             <li class="fragment">
-              The value produced is
-              <ul>
-                <li class="fragment">
-                  $V(e)=pQ-\frac 12 e^2=pe- \frac 12 e^2$
-                </li>
-                <li class="fragment">FOC: $V'(e)=p-e=0$ &rArr; $e=p$</li>
-              </ul>
+              They take $p$ as given, and $w$, the hourly wage
             </li>
             <li class="fragment">
-              Antonella's utility is $U(e)=\beta e-\frac 12 e^2$
-              <ul>
-                <li class="fragment">
-                  FOC: $U'(e)=\beta -e=0$ &rArr; $e=\beta$
-                </li>
-              </ul>
+              For Ambrosius: $U_A=we-\frac 12 e^2$ &rArr; FOC: $w-e=0$ &hArr;
+              Supply: $e=w$
+            </li>
+            <li class="fragment">For Porfirio: $\Pi_P=e(p-w)$</li>
+            <li class="fragment">
+              If $p>w$, his demand for $e$ would be unbounded; if $p\lt w$, his
+              demand would be $e=0$
             </li>
             <li class="fragment">
-              Optimal bonus: $\beta=p$
-              <ul>
-                <li class="fragment">
-                  Maximal value implies agent keeps profits
-                </li>
-                <li class="fragment">Principal "sells firm" to agent</li>
-              </ul>
+              Neither clears the market, as supply $\ne$ demand
+            </li>
+            <li class="fragment">
+              So $p=w$ and Porfirio demands $e=w$, even though he is indifferent
+            </li>
+            <li class="fragment">
+              Outcome is efficient, $\Pi_P=0$, $U_A=\frac 12 p^2$
             </li>
           </ul>
         </section>
         <section>
-          <h2></h2>
+          <h2>Principal-Agent Model as Dynamic Game</h2>
           <ul>
-            <li class="fragment"></li>
-            <li class="fragment"></li>
-            <li class="fragment"></li>
-            <li class="fragment"></li>
-            <li class="fragment"></li>
+            <li class="fragment">
+              Now suppose Porfirio offers a contract directly to Ambrosius
+            </li>
+            <li class="fragment">
+              We will consider linear contracts:
+              <ul>
+                <li class="fragment">
+                  Up-front payment of $w$ and per hour payment of $\beta$
+                </li>
+                <li class="fragment">
+                  (Notice that $\beta$ was $w$ before...)
+                </li>
+              </ul>
+            </li>
+            <li class="fragment">
+              Game with three stages
+              <ol>
+                <li class="fragment">
+                  $P$(orfirio) offers contract (choosing values $w$ and $\beta$)
+                </li>
+                <li class="fragment">$A$(mbrosius) accepts or rejects</li>
+                <li class="fragment">
+                  <br />
+                  <ul>
+                    <li class="fragment">
+                      If $A$ rejects, $P$ gets 0 and $A$ gets $U_{out}$
+                    </li>
+                    <li class="fragment">
+                      If $A$ accepts, he chooses $e$, gets paid according to the
+                      contract and $P$ gets the rest of the profit
+                    </li>
+                  </ul>
+                </li>
+              </ol>
+            </li>
           </ul>
         </section>
         <section>
-          <h2></h2>
+          <h2>Optimal Contracts</h2>
           <ul>
-            <li class="fragment"></li>
-            <li class="fragment"></li>
-            <li class="fragment"></li>
-            <li class="fragment"></li>
-            <li class="fragment"></li>
+            <li class="fragment">
+              In the last stage, $U_A(e)=w+\beta e-\frac 12 e^2$
+              <ul>
+                <li class="fragment">FOC: $\beta-e=0$ &rArr; $e=\beta$</li>
+              </ul>
+            </li>
+            <li class="fragment">
+              In the penultimate stage, $A$ accepts as long as $U_A\ge U_{out}$
+            </li>
+            <li class="fragment">
+              In the first stage, $P$ can be clever in two ways:
+              <ul>
+                <li class="fragment">
+                  If $P$ sets $\beta=p$, then (in the final stage) $e=p$ and
+                  production is efficient
+                  <ul>
+                    <li class="fragment">
+                      (This works more generally: $\beta=p$ means the agent
+                      faces all the costs and benefits and thus maximizes
+                      efficiency)
+                    </li>
+                  </ul>
+                </li>
+                <li class="fragment">
+                  If $P$ sets $U_A=U_{out}$, then he minimizes the payment to
+                  $A$
+                  <ul>
+                    <li class="fragment">
+                      (This is also generally optimal: incentivise the agent
+                      just enough that he doesn't quit)
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="fragment">
+              If $U_{out}=0$, then $0=U_A=w+p^2-\frac 12 p^2= \frac 12 p^2$
+              <ul>
+                <li class="fragment">$P$ earns full surplus</li>
+                <li class="fragment">
+                  Still efficient, complete reverse of market
+                </li>
+                <li class="fragment">
+                  Power of moving first (and proposing contract)
+                </li>
+              </ul>
+            </li>
+            <li class="fragment">
+              Some markets are like this: Taxi drivers pay lump sum fee,
+              franchisees pay fixed rent
+            </li>
           </ul>
         </section>
         <section>
@@ -270,6 +347,143 @@
             </li>
           </ul>
         </section>
+        <section>
+          <h1>Dynamic games in the market</h1>
+        </section>
+        <section>
+          <h2>Pricing in Vertical Chains</h2>
+          <style>
+            #doublem {
+              .gt-payoff .gt-p1 {
+                color: darkgreen;
+              }
+              .gt-leaf {
+                r: 4.5px;
+              }
+            }
+          </style>
+          <div class="cols" style="--cols: 1fr 1fr; --align: center">
+            <ul>
+              <li class="fragment">
+                Vertical chain with upstream wholesale firm and downstream
+                retailer
+              </li>
+              <li class="fragment">Both are monopolists</li>
+              <li class="fragment">
+                Two-stage game
+                <ul>
+                  <li class="fragment">
+                    Wholesaler sets wholesale price $p_W$
+                  </li>
+                  <li class="fragment">
+                    Retailer observes $p_W$ and sets retail price $p_R$
+                  </li>
+                  <li class="fragment">
+                    (Consumers making buying decisions unstrategically)
+                  </li>
+                </ul>
+              </li>
+              <li class="fragment">
+                We solve it using backwards induction (as usual)
+              </li>
+            </ul>
+            <div id="doublem" style="zoom: 1.5"></div>
+          </div>
+        </section>
+        <section>
+          <h2>Pricing in Vertical Chains</h2>
+          <style>
+            #doublem2 {
+              .gt-payoff .gt-p1 {
+                color: darkgreen;
+              }
+              .gt-leaf {
+                r: 4.5px;
+              }
+            }
+          </style>
+          <div class="cols" style="--cols: 1.5fr 1fr; --align: center">
+            <ul>
+              <li class="fragment">
+                Backward induction: start in last stage (Retailer)
+              </li>
+              <li class="fragment">$\Pi(p_R)=q(p-c)=(120-p_R)(p_R-p_W)$</li>
+              <li class="fragment">
+                FOC: $120-2p_R+p_W=0 \iff p_R=\dfrac{120+p_W}2$
+              </li>
+              <li class="fragment">
+                This implies that demand will be
+                $D(p_W)=120-p_R=\dfrac{120-p_W}2$
+              </li>
+            </ul>
+            <div id="doublem2" style="zoom: 1.5"></div>
+          </div>
+        </section>
+        <section>
+          <h2>Pricing in Vertical Chains</h2>
+          <style>
+            #doublem3 {
+              .gt-payoff .gt-p1 {
+                color: darkgreen;
+              }
+              .gt-leaf {
+                r: 4.5px;
+              }
+            }
+          </style>
+          <div class="cols" style="--cols: 1.5fr 1fr; --align: center">
+            <ul>
+              <li class="fragment">Backward induction: stage 1</li>
+              <li class="fragment">
+                From stage 2, we know $D(p_W)=\dfrac{120-p_W}2$
+              </li>
+              <li class="fragment">
+                $\Pi_W(p_W)=q(p-c)=\dfrac{120-p_W}2 (p_W-30)$
+              </li>
+              <li class="fragment">FOC: $\frac 12 (150-2p_W)=0 \iff p_W=75$</li>
+              <li class="fragment">$p_R=\dfrac{120+p_W}2=97.5$</li>
+              <li class="fragment">$D=\dfrac{120-p_W}2=22.5$</li>
+              <li class="fragment">
+                As we will see, this is a very bad outcome, even compared to
+                regular monopoly
+              </li>
+            </ul>
+            <div id="doublem3" style="zoom: 1.5"></div>
+          </div>
+        </section>
+        <section>
+          <h2>Pricing in Vertical Chains</h2>
+          <style>
+            #singlem {
+              .gt-payoff .gt-p1 {
+                color: darkgreen;
+              }
+              .gt-leaf {
+                r: 4.5px;
+              }
+            }
+          </style>
+          <div class="cols" style="--cols: 1.5fr 1fr; --align: center">
+            <ul>
+              <li>Suppose the firms merge</li>
+              <li class="fragment">$\Pi_s=q(p-c)=(120-p_S)(p_S-30)$</li>
+              <li class="fragment">FOC: $150-2p_S=0 \iff p_S=75$</li>
+              <li class="fragment">$D=120-p_S=45$</li>
+              <li class="fragment">
+                Prices much higher and quantities much lower with double
+                marginalisation
+              </li>
+              <li class="fragment">
+                "Only thing worse than a monopoly is a chain of monopolies"
+              </li>
+              <li class="fragment">
+                Both consumers and producers can lose from double
+                marginalisation
+              </li>
+            </ul>
+            <div id="singlem" data-show="1" style="zoom: 1.5"></div>
+          </div>
+        </section>
       </div>
     </div>
     <script src="dist/reveal.js"></script>
@@ -307,6 +521,25 @@
             moves: { Bonus: [1, 1], "No Bonus": [-1, 3] },
           },
         },
+      };
+
+      const doublem = {
+        player: "Wholesaler ($MC_W=30$)",
+        id: "s",
+        moves: {
+          $p_W$: {
+            player: "Retailer ($MC_R=p_W$)",
+            id: "ret",
+            moves: { $p_R$: ["\\text{Consumers } (D(p_R) = 120 - p_R)"] },
+          },
+        },
+      };
+
+      //single firm
+      const singlem = {
+        player: "Merged Firm ($MC_W=30$)",
+        id: "s",
+        moves: { $p_S$: ["\\text{Consumers } (D(p_S) = 120 - p_S)"] },
       };
 
       // First entry game
@@ -357,6 +590,12 @@
           { node: "s", when: "6", value: [0, 0] },
         ],
       });
+
+      // Double Mrginalisation Game
+      gameTree("#doublem", doublem);
+      gameTree("#doublem2", doublem);
+      gameTree("#doublem3", doublem);
+      gameTree("#singlem", singlem);
     </script>
 
     <script>
