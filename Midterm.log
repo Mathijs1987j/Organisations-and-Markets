@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025/nixos.org) (preloaded format=pdflatex 1980.1.1)  11 NOV 2026 18:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025/nixos.org) (preloaded format=pdflatex 1980.1.1)  11 NOV 2026 21:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1403,34 +1403,32 @@ Package rerunfilecheck Info: File `Midterm.out' has not changed.
 (rerunfilecheck)             Checksum: 4B54C451252A138DCE793DBE7737D82E;354.
  ) 
 Here is how much of TeX's memory you used:
- 40940 strings out of 468659
- 954566 string characters out of 5420625
- 1528982 words of memory out of 5000000
+ 40939 strings out of 468659
+ 954551 string characters out of 5420625
+ 1527982 words of memory out of 5000000
  68938 multiletter control sequences out of 15000+600000
- 647192 words of font info for 139 fonts, out of 8000000 for 9000
+ 647134 words of font info for 138 fonts, out of 8000000 for 9000
  430 hyphenation exceptions out of 8191
- 103i,5n,108p,1004b,684s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 103i,5n,108p,1004b,637s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </nix/store/6cj9ac6q91h85p4l0z1biib9c1d8aqxp-texlive-2025-r78234-final-env-te
-xmfdist/fonts/type1/public/amsfonts/cm/cmex10.pfb></nix/store/6cj9ac6q91h85p4l0
+xmfdist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></nix/store/6cj9ac6q91h85p4l0
 z1biib9c1d8aqxp-texlive-2025-r78234-final-env-texmfdist/fonts/type1/public/amsf
-onts/cm/cmmi10.pfb></nix/store/6cj9ac6q91h85p4l0z1biib9c1d8aqxp-texlive-2025-r7
-8234-final-env-texmfdist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></nix/store/6
-cj9ac6q91h85p4l0z1biib9c1d8aqxp-texlive-2025-r78234-final-env-texmfdist/fonts/t
-ype1/public/amsfonts/cm/cmr10.pfb></nix/store/6cj9ac6q91h85p4l0z1biib9c1d8aqxp-
-texlive-2025-r78234-final-env-texmfdist/fonts/type1/public/amsfonts/cm/cmr7.pfb
+onts/cm/cmmi7.pfb></nix/store/6cj9ac6q91h85p4l0z1biib9c1d8aqxp-texlive-2025-r78
+234-final-env-texmfdist/fonts/type1/public/amsfonts/cm/cmr10.pfb></nix/store/6c
+j9ac6q91h85p4l0z1biib9c1d8aqxp-texlive-2025-r78234-final-env-texmfdist/fonts/ty
+pe1/public/amsfonts/cm/cmr7.pfb></nix/store/6cj9ac6q91h85p4l0z1biib9c1d8aqxp-te
+xlive-2025-r78234-final-env-texmfdist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 ></nix/store/6cj9ac6q91h85p4l0z1biib9c1d8aqxp-texlive-2025-r78234-final-env-tex
-mfdist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></nix/store/6cj9ac6q91h85p4l0z
-1biib9c1d8aqxp-texlive-2025-r78234-final-env-texmfdist/fonts/type1/public/cm-su
-per/sfbx1440.pfb></nix/store/6cj9ac6q91h85p4l0z1biib9c1d8aqxp-texlive-2025-r782
-34-final-env-texmfdist/fonts/type1/public/cm-super/sfrm1000.pfb></nix/store/6cj
-9ac6q91h85p4l0z1biib9c1d8aqxp-texlive-2025-r78234-final-env-texmfdist/fonts/typ
-e1/public/cm-super/sfrm1200.pfb></nix/store/6cj9ac6q91h85p4l0z1biib9c1d8aqxp-te
-xlive-2025-r78234-final-env-texmfdist/fonts/type1/public/cm-super/sfrm1728.pfb>
-
-Output written on Midterm.pdf (2 pages, 122318 bytes).
+mfdist/fonts/type1/public/cm-super/sfbx1440.pfb></nix/store/6cj9ac6q91h85p4l0z1
+biib9c1d8aqxp-texlive-2025-r78234-final-env-texmfdist/fonts/type1/public/cm-sup
+er/sfrm1000.pfb></nix/store/6cj9ac6q91h85p4l0z1biib9c1d8aqxp-texlive-2025-r7823
+4-final-env-texmfdist/fonts/type1/public/cm-super/sfrm1200.pfb></nix/store/6cj9
+ac6q91h85p4l0z1biib9c1d8aqxp-texlive-2025-r78234-final-env-texmfdist/fonts/type
+1/public/cm-super/sfrm1728.pfb>
+Output written on Midterm.pdf (2 pages, 114630 bytes).
 PDF statistics:
- 98 PDF objects out of 1000 (max. 8388607)
- 73 compressed objects within 1 object stream
- 19 named destinations out of 1000 (max. 500000)
+ 94 PDF objects out of 1000 (max. 8388607)
+ 71 compressed objects within 1 object stream
+ 20 named destinations out of 1000 (max. 500000)
  34845 words of extra memory for PDF output out of 35830 (max. 10000000)
 
