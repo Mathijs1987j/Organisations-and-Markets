@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>OM-Slides-Week-4</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="dist/plugin/highlight/monokai.css" />
+    <link rel="stylesheet" href="custom.css" />
+    <link rel="stylesheet" href="gametree.css" />
+
+    <!-- JSXGraph: used for the implicit-circle and Taylor approximation slides -->
+    <link rel="stylesheet" href="jsxgraph/jsxgraph.css" />
+    <script src="jsxgraph/jsxgraphcore.js"></script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides" style="font-size: 35px">
+        <section>
+          <h2>Politeness</h2>
+          <ul>
+            <li class="fragment">
+              Why don't you throw your trash on the street? Why do people tip?
+              (Why more in the US than in Europe?)
+            </li>
+            <li class="fragment">
+              Why will an employee occasionally work late unpaid? Why will an
+              employer accept an occasional mistake from an employee?
+            </li>
+            <li class="fragment">
+              Why will parties sometimes renegotiate a contract after unexpected
+              cost increases?
+            </li>
+            <li class="fragment">
+              Generally: why do people forego short term benefits?
+            </li>
+            <li class="fragment">
+              Rousseau: social contract. Why do people stick with it? (I'm not a
+              philosopher!)
+            </li>
+            <li class="fragment">One possible answer: repeated interactions</li>
+          </ul>
+          <aside class="notes">
+            Mention efficiency wages for second example. Rousseau: mention
+            distinction what people like as outcomes and what is individually
+            rational.
+          </aside>
+        </section>
+      </div>
+    </div>
+    <script src="dist/reveal.js"></script>
+    <script src="dist/plugin/math.js"></script>
+    <script src="dist/plugin/notes.js"></script>
+    <script src="mj-notation.js"></script>
+    <script src="mj-overlays.js"></script>
+    <script src="gametree.js"></script>
+    <script>
+      Reveal.initialize({
+        width: 1560,
+        height: 720,
+        hash: true,
+        transition: "convex",
+        mathjax4: MJNotation.mathjax4(),
+        plugins: [RevealMath.MathJax4, RevealNotes, MJOverlays],
+      });
+    </script>
+  </body>
+</html>
