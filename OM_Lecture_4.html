@@ -211,40 +211,150 @@
               \dfrac{\Pi^D-\Pi^C}{\Pi^D-\Pi^N}=1-\dfrac{\Pi^C-\Pi^N}{\Pi^D-\Pi^N}$
             </li>
             <li class="fragment">If $\Pi^D\downarrow$</li>
+            <li class="fragment">
+              We try to understand many strategic situation by analysing these
+              features
+            </li>
           </ul>
         </section>
         <section>
-          <h2></h2>
+          <h2>Relational Contracts</h2>
           <ul>
-            <li class="fragment"></li>
-            <li class="fragment"></li>
-            <li class="fragment"></li>
-            <li class="fragment"></li>
-            <li class="fragment"></li>
-            <li class="fragment"></li>
+            <li class="fragment">Simple bonus game: repition allowed effort</li>
+            <li class="fragment">
+              More complex question: how close can we come to optimal effort?
+            </li>
+            <li class="fragment">
+              When a principal offer a contract to induce effort, that affects
+              his $\Pi^C$, $\Pi^D$ and (perhaps) his $\Pi^N$
+            </li>
+            <li class="fragment">What wins?</li>
+            <li class="fragment">Bull's model: analysis of simple case</li>
+            <li class="fragment">
+              Lesson: inducing optimal effort is harder (for the principal!)
+              than inducing some effort
+            </li>
           </ul>
         </section>
         <section>
-          <h2></h2>
+          <h2>Bull's Model</h2>
           <ul>
-            <li class="fragment"></li>
-            <li class="fragment"></li>
-            <li class="fragment"></li>
-            <li class="fragment"></li>
-            <li class="fragment"></li>
-            <li class="fragment"></li>
+            <li class="fragment">Risk neutral Principal and Agent</li>
+            <li class="fragment">
+              Agent can carry out risky project
+              <ul>
+                <li class="fragment">A movie that can be a hit or a flop</li>
+                <li class="fragment">
+                  A new product that can sell well or not
+                </li>
+              </ul>
+            </li>
+            <li class="fragment">
+              Assume only 2 outcomes:
+              <ul>
+                <li class="fragment">
+                  Hit: Principal receives $v$ ($0\lt v \lt1$)
+                </li>
+                <li class="fragment">Flop: Principal receives 0</li>
+              </ul>
+            </li>
           </ul>
         </section>
         <section>
-          <h2></h2>
+          <h2>Timeline</h2>
+          <ol>
+            <li class="fragment">
+              Principal offers compensation package $(w,\beta)$
+              <ul>
+                <li class="fragment">Agent receives $w$ if flop</li>
+                <li class="fragment">Agent receives $w+\beta$ if hit</li>
+              </ul>
+            </li>
+            <li class="fragment">
+              Agents accepts or rejects offer
+              <ul>
+                <li class="fragment">
+                  If rejects, round ends, Agent receives $U_{out}$ and Principal
+                  receives nothing
+                </li>
+              </ul>
+            </li>
+            <li class="fragment">
+              Agent chooses effort $e\in[0,1]$
+              <ul>
+                <li class="fragment">Cost of effort $C(e)=\frac 12 e^2$</li>
+                <li class="fragment">Probability of hit $P=e$</li>
+              </ul>
+            </li>
+            <li class="fragment">
+              If hit, Principals chooses whether to honour bonus
+            </li>
+          </ol>
+        </section>
+        <section>
+          <h2>One-Shot Equilibrium</h2>
+          <ol reversed>
+            <li class="fragment">Principal does not pay bonus</li>
+            <li class="fragment">Agent exerts zero effort</li>
+            <li class="fragment">Agent accepts only if $w\ge U_{out}$</li>
+            <li class="fragment">Principal sets $w\lt U_{out}$</li>
+          </ol>
+          <p class="fragment">Not efficient!</p>
+        </section>
+        <section>
+          <h2>Contract pay-offs</h2>
           <ul>
-            <li class="fragment"></li>
-            <li class="fragment"></li>
-            <li class="fragment"></li>
-            <li class="fragment"></li>
-            <li class="fragment"></li>
-            <li class="fragment"></li>
+            <li class="fragment">
+              Suppose Agent believed contract $(w,\beta)$
+            </li>
+            <li class="fragment">$\Pi_A=w+\beta e-\frac 12 e^2$</li>
+            <li class="fragment">
+              Agent chooses $e=\beta$ and has utility $\Pi_A=w+\frac 12 \beta^2$
+            </li>
+            <li class="fragment">
+              Principal considers all contracts $(w,\beta)$
+            </li>
+            <li class="fragment">
+              Principal would never pay more than $U_{out}$, so $w=U_{out}-\frac
+              12 \beta^2$
+            </li>
+            <li class="fragment">Given that agent exerts $e=\beta$:</li>
+            <li class="fragment">
+              $\Pi_P(\beta)=e (v-\beta) - w= \beta(v-\beta)-U_{out}+\frac 12
+              \beta^2= \frac{(2v-\beta)\beta}2-U_{out}$
+            </li>
+            <li class="fragment">Optimal contract would be $\beta=v$</li>
           </ul>
+        </section>
+        <section>
+          <h2>Cooperation?</h2>
+          <ul>
+            <li class="fragment">
+              If Principals sticks to contract,
+              $\Pi^C=\frac{(2v-\beta)\beta}2-U_{out}$
+            </li>
+            <li class="fragment">If he deviates, gains $\Pi^D=\beta$ now</li>
+            <li class="fragment">
+              But cooperation ceases and nothing is produced after: $\Pi^N=0$
+            </li>
+            <li class="fragment">
+              Cooperation if $\delta \ge \dfrac{\Pi^D-\Pi^C}{\Pi^D-\Pi^N}$
+            </li>
+            <li class="fragment">
+              Can rewrite it as $\Pi^C\ge (\frac 1\delta -1)\beta =r\beta$
+            </li>
+            <li class="fragment">
+              (Here $r=\dfrac 1{1+\delta}$, the interest rate)
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Feasibility of contracts</h2>
+          <div
+            id="plot"
+            class="jxgbox"
+            style="width: 1300px; height: 700px"
+          ></div>
         </section>
       </div>
     </div>
@@ -358,6 +468,99 @@
       // Shirking game
       gameTree("#shirkinginf", shirkinginf, {
         xGap: 150,
+      });
+    </script>
+    <script>
+      const f = (S) => -0.3 * S * (S - 8) - 1;
+      const g = (S) => 3 * S;
+      const h = (S) => 1.1 * S;
+      const k = (S) => 0.5 * S;
+
+      const board = JXG.JSXGraph.initBoard("plot", {
+        boundingbox: [-1, 9, 9, -1], // [xmin, ymax, xmax, ymin]
+        axis: true,
+        defaultAxes: {
+          x: {
+            ticks: { visible: false },
+            name: "\\(\\beta\\)",
+            withLabel: true,
+            label: {
+              position: "rt",
+              offset: [-20, -25],
+              useMathJax: true,
+              fontSize: 28,
+            },
+          },
+          y: {
+            ticks: { visible: false },
+            name: "\\(\\Pi\\)",
+            withLabel: true,
+            label: {
+              position: "rt",
+              offset: [10, -10],
+              useMathJax: true,
+              fontSize: 28,
+            },
+          },
+        },
+        showCopyright: false,
+        showNavigation: false,
+      });
+
+      board.create("functiongraph", [f, 0, 8], {
+        strokeColor: "#1f6fb2",
+        strokeWidth: 3,
+      });
+      board.create("functiongraph", [g, 0, 8], {
+        strokeColor: "#c0392b",
+        strokeWidth: 3,
+      });
+      board.create("functiongraph", [h, 0, 8], {
+        strokeColor: "#c0392b",
+        strokeWidth: 3,
+      });
+      board.create("functiongraph", [k, 0, 8], {
+        strokeColor: "#c0392b",
+        strokeWidth: 3,
+      });
+      board.create(
+        "segment",
+        [
+          [4, 0],
+          [4, f(4)],
+        ],
+        {
+          strokeColor: "gray",
+          strokeWidth: 2,
+          dash: 2,
+          fixed: true,
+        },
+      );
+
+      board.create("text", [7.1, f(7) + 0.3, "\\(\\Pi^C\\)"], {
+        useMathJax: true,
+        color: "#1f6fb2",
+        fontSize: 28,
+      });
+      board.create("text", [2, g(2) - 0.1, "\\(r_H\\beta\\)"], {
+        useMathJax: true,
+        color: "#c0392b",
+        fontSize: 28,
+      });
+      board.create("text", [6, h(6) - 0.1, "\\(r_M\\beta\\)"], {
+        useMathJax: true,
+        color: "#c0392b",
+        fontSize: 28,
+      });
+      board.create("text", [7, k(7) - 0.1, "\\(r_L\\beta\\)"], {
+        useMathJax: true,
+        color: "#c0392b",
+        fontSize: 28,
+      });
+      board.create("text", [3.7, -0.3, "\\(\\beta=v\\)"], {
+        useMathJax: true,
+        color: "#c0392b",
+        fontSize: 28,
       });
     </script>
     <script>
