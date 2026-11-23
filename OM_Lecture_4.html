@@ -26,6 +26,40 @@
     <div class="reveal">
       <div class="slides" style="font-size: 35px">
         <section>
+          <h2>Exam Cheat Sheet</h2>
+          <ul>
+            <li class="fragment">
+              Perfect competition $\iff$ price taking $\iff$ $P=MC$
+            </li>
+            <li class="fragment">
+              Perfect competition + Free entry $\iff$ price taking + zero profit
+              $\iff$ $P=MC=AC$
+            </li>
+            <li class="fragment">
+              Imperfect/strategic competition in quantity $\iff$ $p=D(Q)$, with
+              $Q=q_1+q_2+\ldots+q_n$
+              <ul>
+                <li class="fragment">
+                  If $n=1$ $\Rightarrow$ Monopoly $\iff$ $MR=MC$
+                </li>
+                <li class="fragment">
+                  If $n=2$ $\Rightarrow$ Cournot competition $\iff$ $MR=MC$
+                </li>
+                <li class="fragment">
+                  If $n$ comes from free entry $\Rightarrow$ zero profit and
+                  $\iff$ $MR=MC$
+                </li>
+              </ul>
+            </li>
+            <li class="fragment">
+              Imperfect/strategic competition in price $\iff$ Bertrand, with
+              $P=MC$
+            </li>
+            <li class="fragment">Separate point $\Pi=R-C$</li>
+            <li class="fragment">$\Pi=q(p-c)$ only if $C(q)=cq$</li>
+          </ul>
+        </section>
+        <section>
           <h2>Politeness</h2>
           <ul>
             <li class="fragment">
@@ -55,6 +89,163 @@
             rational.
           </aside>
         </section>
+        <section>
+          <h2>Hold-up</h2>
+          <div id="shirking" style="zoom: 1.5"></div>
+          <div class="r-stack">
+            <p data-show="0">Last week: SPNE was bad outcome</p>
+            <p data-show="1">Cooperation by promising future cooperation?</p>
+            <p data-show="2">
+              If you don't cooperate now, I punish in the future
+            </p>
+            <p data-show="3">Can it work?</p>
+          </div>
+        </section>
+        <section>
+          <h2>A Certain Future</h2>
+          <div id="shirkingrep"></div>
+          <div class="r-stack">
+            <p data-show="0">This is the game if they play it twice in a row</p>
+            <p data-show="1">Let's find the SPNE</p>
+            <p data-show="6">That's the original game!</p>
+            <p data-show="9">That folded like a tent!</p>
+          </div>
+        </section>
+        <section>
+          <h2>Cooperation and Certainty</h2>
+          <ul>
+            <li class="fragment">Why did cooperation not work?</li>
+            <li class="fragment">
+              At the end of the game, the future promises nothing
+            </li>
+            <li class="fragment">In the final period, cooperation collapses</li>
+            <li class="fragment">
+              But then so it does in the penultimate period, and the period
+              before and so on
+            </li>
+            <li class="fragment">
+              (This is not about subgame perfection: the temptations are on
+              path)
+            </li>
+            <li class="fragment">The problem: we know whent he game ends</li>
+            <li class="fragment">When does society end? When does life end?</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Uncertain End</h2>
+          <div id="shirkinginf"></div>
+        </section>
+        <section>
+          <h2>Strategies in a repeated game</h2>
+          <ul>
+            <li class="fragment">How to analyse such a game?</li>
+            <li class="fragment">A strategy is a plan for the whole game</li>
+            <li class="fragment">Many strategies!</li>
+            <li class="fragment">
+              We consider a very simple one: Grim Trigger
+            </li>
+            <li class="fragment">
+              Cooperate until someone doesn't, then punish forever
+            </li>
+            <li class="fragment">
+              Punish = short term optimal (Shirk/ No Bonus)
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Grim Trigger: Deviations</h2>
+          <ul>
+            <li class="fragment">Pay-off Principal if everone cooperates:</li>
+            <li class="fragment">
+              $\Pi_P=1+\delta\cdot 1+\delta^2\cdot 1+\ldots$
+            </li>
+            <li class="fragment">$\Pi_P=1+\dfrac{\delta}{1-\delta}$</li>
+            <li class="fragment">What happens if the principal deviates?</li>
+            <li class="fragment">He gets 3 now, then 0 forever</li>
+            <li class="fragment">
+              Deviation not attractive if $1+\dfrac{\delta}{1-\delta}\ge 3 \iff
+              \delta\ge \dfrac 23$
+            </li>
+            <li class="fragment">Similar analysis for agent</li>
+            <li class="fragment">
+              Cooperate if you care enough about the future and expect others to
+              cooperate
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>General Idea Grim Trigger</h2>
+          <ul>
+            <li class="fragment">$\Pi^C$: pay-off cooperation</li>
+            <li class="fragment">
+              $\Pi^D$: pay-off one time (unilateral) deviation
+            </li>
+            <li class="fragment">$\Pi^N$: pay-off no cooperation</li>
+            <li class="fragment">
+              Cooperation: $\Pi^C+\delta \Pi^C+\ldots= \Pi^C
+              +\Pi^C\dfrac{\delta}{1-\delta}$
+            </li>
+            <li class="fragment">
+              Deviation: $\Pi^D + \delta \Pi^N +\ldots=
+              \Pi^D+\Pi^N\dfrac{\delta}{1-\delta}$
+            </li>
+            <li class="fragment">
+              Cooperate if: $\Pi^C +\Pi^C\dfrac{\delta}{1-\delta}\ge
+              \Pi^D+\Pi^N\dfrac{\delta}{1-\delta} \iff \delta \ge
+              \dfrac{\Pi^D-\Pi^C}{\Pi^D-\Pi^N}$
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Feasibility of cooperation</h2>
+          <ul>
+            <li class="fragment">When is cooperation feasible?</li>
+            <li class="fragment">
+              $\delta \ge \dfrac{\Pi^D-\Pi^C}{\Pi^D-\Pi^N}$
+            </li>
+            <li class="fragment">If $\delta\uparrow$</li>
+            <li class="fragment">If $\Pi^C\uparrow$</li>
+            <li class="fragment">If $\Pi^N\downarrow$</li>
+            <li class="fragment">
+              $\delta \ge
+              \dfrac{\Pi^D-\Pi^C}{\Pi^D-\Pi^N}=1-\dfrac{\Pi^C-\Pi^N}{\Pi^D-\Pi^N}$
+            </li>
+            <li class="fragment">If $\Pi^D\downarrow$</li>
+          </ul>
+        </section>
+        <section>
+          <h2></h2>
+          <ul>
+            <li class="fragment"></li>
+            <li class="fragment"></li>
+            <li class="fragment"></li>
+            <li class="fragment"></li>
+            <li class="fragment"></li>
+            <li class="fragment"></li>
+          </ul>
+        </section>
+        <section>
+          <h2></h2>
+          <ul>
+            <li class="fragment"></li>
+            <li class="fragment"></li>
+            <li class="fragment"></li>
+            <li class="fragment"></li>
+            <li class="fragment"></li>
+            <li class="fragment"></li>
+          </ul>
+        </section>
+        <section>
+          <h2></h2>
+          <ul>
+            <li class="fragment"></li>
+            <li class="fragment"></li>
+            <li class="fragment"></li>
+            <li class="fragment"></li>
+            <li class="fragment"></li>
+            <li class="fragment"></li>
+          </ul>
+        </section>
       </div>
     </div>
     <script src="dist/reveal.js"></script>
@@ -63,6 +254,112 @@
     <script src="mj-notation.js"></script>
     <script src="mj-overlays.js"></script>
     <script src="gametree.js"></script>
+    <script>
+      const shirking = {
+        player: "Agent",
+        id: "s",
+        moves: {
+          Shirk: [0, 0],
+          Work: {
+            player: "Principal",
+            id: "w",
+            moves: { Bonus: [1, 1], "No Bonus": [-1, 3] },
+          },
+        },
+      };
+      // Shirking game
+      gameTree("#shirking", shirking, {
+        xGap: 150,
+        highlight: [
+          { choices: { w: "No Bonus" }, when: "0-" },
+          { choices: { s: "Shirk" }, when: "0-" },
+        ],
+      });
+      const shirkingrep = {
+        player: "Agent",
+        id: "s",
+        moves: {
+          Shirk: [0, 0],
+          Work: {
+            player: "Principal",
+            id: "w",
+            moves: {
+              Bonus: {
+                player: "Agent",
+                id: "sB",
+                moves: {
+                  Shirk: [1, 1],
+                  Work: {
+                    player: "Principal",
+                    id: "wB",
+                    moves: {
+                      Bonus: [1 + 1, 1 + 1],
+                      "No Bonus": [1 - 1, 1 + 3],
+                    },
+                  },
+                },
+              },
+              "No Bonus": {
+                player: "Agent",
+                id: "sN",
+                moves: {
+                  Shirk: [-1, 3],
+                  Work: {
+                    player: "Principal",
+                    id: "wN",
+                    moves: {
+                      Bonus: [-1 + 1, 3 + 1],
+                      "No Bonus": [-1 - 1, 3 + 3],
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      };
+      // Shirking game
+      gameTree("#shirkingrep", shirkingrep, {
+        xGap: 150,
+        solved: [
+          { node: "wN", when: "2-", value: [-2, 6] },
+          { node: "wB", when: "3-", value: [0, 4] },
+          { node: "sN", when: "4-", value: [-1, 3] },
+          { node: "sB", when: "5-", value: [1, 1] },
+          { node: "w", when: "7-", value: [-1, 3] },
+          { node: "s", when: "8-", value: [0, 0] },
+        ],
+      });
+
+      const shirkinginf = {
+        player: "Agent",
+        id: "s",
+        moves: {
+          Shirk: {
+            player: "Nature",
+            moves: { "$\\delta$": ["G"], "$1-\\delta$": [0, 0] },
+          },
+          Work: {
+            player: "Principal",
+            id: "w",
+            moves: {
+              Bonus: {
+                player: "Nature",
+                moves: { "$\\delta$": ["G"], "$1-\\delta$": [1, 1] },
+              },
+              "No Bonus": {
+                player: "Nature",
+                moves: { "$\\delta$": ["G"], "$1-\\delta$": [-1, 3] },
+              },
+            },
+          },
+        },
+      };
+      // Shirking game
+      gameTree("#shirkinginf", shirkinginf, {
+        xGap: 150,
+      });
+    </script>
     <script>
       Reveal.initialize({
         width: 1560,
